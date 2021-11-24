@@ -1,0 +1,148 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #333;
+  }
+
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #333;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 75px;
+    height: 36px;
+    border: 1px solid #333;
+    background: #333;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 50%;
+    margin-top:1%;
+    top: 12%;
+  }
+
+  .projectContainer{
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+    height:100%;
+    padding: 30px;
+    border: inset;
+    border-style: 1px;
+    border-color:#7dbcff99;
+    background-color: white;
+}
+
+  .profileContainer{
+    margin-top: 30px;
+    float: left;
+    width: 70%;
+    height: 5%;
+    padding: 30px;
+    border: inset;
+    border-radius: 50px;
+    border-style: 1px;
+    border-color:#7dbcff99;
+    background-color: white;
+  }
+  .profilePicture{
+    margin-top:30px;
+    float: left;
+    width: 10%;
+    height: 70px;
+    padding: 5px;
+    border: inset;
+    border-radius: 30px;
+    border-color: #00B4CC;
+    margin-right: 30px;
+    background-image:  url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/750px-Black_flag.svg.png);
+  }
+
+  .profileButton{
+      float:right;
+      margin-top: 5px;
+      width: 20%;
+      height: 20%;
+      background-color: white;
+      border-radius: 12px;
+      border-color: tomato;
+      margin-right: 20px;
+  }
+
+  .filterContainer{
+    float:left;
+    margin-top: 5px;
+    width: 50%;
+    height: 5%;
+    border: hidden;
+    border-color: turquoise;
+  }
+
+  .filterButton{
+      margin-left: 5px;
+      margin-right: 5px;
+      border: inset;
+      border-radius: 50px;
+      border-color: black;
+      background-color: black;
+      color: white;
+  }
+
+  h3{
+    display: inline-block;
+  }
+
+  .followingsContainer{
+    margin-top: 30px;
+    float: left;
+    width: 70%;
+    height: 5%;
+    padding: 30px;
+    border: inset;
+    border-radius: 50px;
+    border-style: 1px;
+    border-color:#7dbcff99;
+    background-color: white;
+
+  }
