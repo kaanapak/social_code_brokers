@@ -73,3 +73,76 @@ ul {
     border-color:#7dbcff99;
     background-color: white;
 }
+
+  .profileContainer{
+    margin-top: 30px;
+    float: left;
+    width: 70%;
+    height: 5%;
+    padding: 30px;
+    border: inset;
+    border-radius: 50px;
+    border-style: 1px;
+    border-color:#7dbcff99;
+    background-color: white;
+  }
+  .profilePicture{
+    margin-top:30px;
+    float: left;
+    width: 10%;
+    height: 70px;
+    padding: 5px;
+    border: inset;
+    border-radius: 30px;
+    border-color: #00B4CC;
+    margin-right: 30px;
+    background-image:  url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/750px-Black_flag.svg.png);
+  }
+
+  .profileButton{
+      float:right;
+      margin-top: 5px;
+      width: 20%;
+      height: 20%;
+      background-color: white;
+      border-radius: 12px;
+      border-color: tomato;
+      margin-right: 20px;
+  }
+
+  .filterContainer{
+    float:left;
+    margin-top: 5px;
+    width: 50%;
+    height: 5%;
+    border: hidden;
+    border-color: turquoise;
+  }
+
+  .filterButton{
+      margin-left: 5px;
+      margin-right: 5px;
+      border: inset;
+      border-radius: 50px;
+      border-color: black;
+      background-color: black;
+      color: white;
+  }
+
+  h3{
+    display: inline-block;
+  }
+
+  .followingsContainer{
+    margin-top: 30px;
+    float: left;
+    width: 70%;
+    height: 5%;
+    padding: 30px;
+    border: inset;
+    border-radius: 50px;
+    border-style: 1px;
+    border-color:#7dbcff99;
+    background-color: white;
+
+  }
