@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="" />
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Error.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/UserSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/RepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/GreetingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Greeting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/GreetingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +61,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2025s6ZYko4vJgf3JNs7rLSgvC3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,6 +77,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../github-api-main" />
@@ -63,6 +90,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SpringMvcExampleApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-data-jpa-example.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
@@ -94,5 +132,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
