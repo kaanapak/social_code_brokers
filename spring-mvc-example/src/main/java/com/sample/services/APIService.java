@@ -24,7 +24,7 @@ System.out.println(response.body());
 
     public static HttpResponse<String>  APIReturn(String username) throws IOException, InterruptedException {
 
-        String url = "https://api.github.com/users/"+username+"/repos";
+        String url = "https://api.github.com/users/"+username;
         HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
