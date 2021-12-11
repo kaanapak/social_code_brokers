@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sample.model.User;
 import com.sample.services.UserService;
 
+import java.util.Objects;
+
 @Controller
 public class EnteredUserController {
 
@@ -27,14 +29,11 @@ public class EnteredUserController {
     }
 
     @PostMapping("/mainPage")
-    public String mainPage(Model model,@RequestParam(name="username", required=false, defaultValue="World") String username,@RequestParam(name="password", required=false, defaultValue="World") String password
-            , @RequestParam(name="gitUserName", required=false, defaultValue="World") String GitUsername,@RequestParam(name="starredID", required=false, defaultValue="World") String StarredId
-            , Integer M,@RequestParam(name="ısSıgnUp", required=false, defaultValue="0") Integer IsSıgnup
-            , @RequestParam(name="ısAddStar", required=false, defaultValue="0") Integer IsAddStar,@RequestParam(name="ısRemoveStar", required=false, defaultValue="0") Integer IsRemoveStar){
+    public String mainPage(Model model,String username,String password,String GitUsername,String StarredId, Integer M,Integer IsSıgnup, Integer IsAddStar,Integer IsRemoveStar){
 boolean directMainPage=true;
 String returnpage="";
 
-        if(username.equals("Kaan")){
+        if(!Objects.isNull(M)){
             System.out.println("Entered here");
             if(!serverService.PasswordCheck(username,password)){
                 directMainPage=false;
@@ -42,7 +41,7 @@ String returnpage="";
                 model.addAttribute(error);
                 returnpage="index";
             }
-        }else if(IsSıgnup==1){
+        }else if(!Objects.isNull(IsSıgnup)){
             if(!serverService.ısFirst(username)){
                 directMainPage=false;
                 Error error=new Error("There is a user with same username");
@@ -56,9 +55,9 @@ String returnpage="";
             }else{
                 serverService.AddUser(username, GitUsername, password);
             }
-        }else if(IsAddStar==1){
+        }else if(!Objects.isNull(IsAddStar)){
             serverService.addStarredRepo(username,StarredId);
-        }else if(IsRemoveStar==1){
+        }else if(!Objects.isNull(IsRemoveStar)){
             serverService.removeStarredRepo(username,StarredId);
         }
 

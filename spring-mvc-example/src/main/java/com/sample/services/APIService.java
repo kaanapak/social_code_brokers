@@ -9,11 +9,33 @@ import org.springframework.stereotype.Service;
 
 import com.sample.model.Repository;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 @Service
 public class APIService {
+public static void main (String [] args) throws IOException, InterruptedException {
+    HttpResponse<String> response=APIReturn("kaanapak");
+System.out.println(response.body());
+    }
+
+    public static HttpResponse<String>  APIReturn(String username) throws IOException, InterruptedException {
+
+        String url = "https://api.github.com/users/"+username+"/repos";
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        return response;
+    }
+
     //Is there a github account with that username
-    public Boolean isGithub(String GitUsername){
+
+    public Boolean isGithub(String GitUsername) {
+
         return true;
     }
 
