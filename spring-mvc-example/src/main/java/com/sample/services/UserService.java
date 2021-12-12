@@ -2,6 +2,7 @@ package com.sample.services;
 
 import java.util.ArrayList;
 
+import com.sample.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sample.model.Repository;
@@ -13,10 +14,6 @@ public class UserService {
     APIService apıService=new APIService();
 
 
-public void try_user(){
-
-
-}
 public String getGitHubUsername(String username){
     return serverService.getGitUsername(username);
 }
@@ -66,4 +63,26 @@ public Integer getScore(String username){
     String gitUsername=serverService.getGitUsername(username);
     return apıService.ScoreCalculator(gitUsername);
 }
+
+public Integer getIsFollowing(String username,String FollowingUsername){
+    Integer ısFollowing=0;
+    if(serverService.isFollowing(username,FollowingUsername)){
+        ısFollowing=1;
+    }
+    return ısFollowing;
+}
+
+    public ArrayList<User> setFollowingUserList (String username){
+        ArrayList<User> UserList =new ArrayList<>();
+        ArrayList <String> FollowingNames=getFollowings(username);
+        for(int i=0;i<FollowingNames.size();i++){
+            String currentUsername=FollowingNames.get(i);
+            User user=new User();
+            user.setUsername(currentUsername);
+            user.setScore(getScore(currentUsername));
+            UserList.add(user);
+        }
+        return UserList;
+
+    }
 }

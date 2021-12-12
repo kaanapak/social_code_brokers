@@ -5,11 +5,14 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String GitHubUsername;
+    private Integer IsFollowing;
     private ArrayList<Repository> RepoList=new ArrayList<>();
     private ArrayList<String> Followings=new ArrayList<>();
+    private ArrayList <User> FollowingUsers=new ArrayList<>();
     private ArrayList<Repository> StarredRepos=new ArrayList<>();
     private ArrayList<Repository> FollowingsRepos=new ArrayList<>();
     private  double score;
+
 
     public User(){}
     public User(String username,String GitHubUsername,ArrayList<Repository> RepoList,ArrayList<String> Followings,ArrayList<Repository> StarredRepos,ArrayList<Repository> FollowingsRepos,double score){
@@ -57,5 +60,14 @@ this.score=score;
     }
     public void setScore(double score) {
         this.score = score;
+    }
+    public Integer getIsFollowing() {
+        return IsFollowing;
+    }
+    public void setIsFollowing(Integer isFollowing) {
+        IsFollowing = isFollowing;
+    }
+    public void setFollowingUsers(ArrayList<User> followingUsers) {
+        FollowingUsers = followingUsers;
     }
 }

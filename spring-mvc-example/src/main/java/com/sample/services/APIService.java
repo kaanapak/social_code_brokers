@@ -18,13 +18,14 @@ import java.net.http.HttpResponse;
 @Service
 public class APIService {
 public static void main (String [] args) throws IOException, InterruptedException {
+
     HttpResponse<String> response=APIReturn("kaanapak");
 System.out.println(response.body());
     }
 
     public static HttpResponse<String>  APIReturn(String username) throws IOException, InterruptedException {
 
-        String url = "https://api.github.com/users/"+username;
+        String url = "https://api.github.com/users/"+username+"/repos";
         HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -44,6 +45,8 @@ System.out.println(response.body());
     //This method finds all repositories of that user
     public ArrayList<Repository> RepoList(String GitUsername){
         ArrayList<Repository>RepoList=new ArrayList<>();
+
+
         return  RepoList;
     }
 
@@ -64,7 +67,7 @@ System.out.println(response.body());
     }
 
     public Integer ScoreCalculator(String GitUsername){
-        Integer Score=10*FollowerNumber(GitUsername)*CodeCount(GitUsername)*15+LanguageCount(GitUsername)*5;
+        Integer Score=10*FollowerNumber(GitUsername)+CodeCount(GitUsername)*15+LanguageCount(GitUsername)*5;
         //Change coefficients!
         return Score;
     }

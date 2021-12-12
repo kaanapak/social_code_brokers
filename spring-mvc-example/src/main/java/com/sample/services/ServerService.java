@@ -27,7 +27,7 @@ public class ServerService {
     }
 
     public Boolean PasswordCheck(String username,String password){
-        return false;
+        return true;
     }
 
     public void ChangePassword(String username,String oldPassword,String newPassword){
@@ -65,6 +65,9 @@ public class ServerService {
 
     }
 
+    public Boolean isFollowing (String username,String FollowingUsername){
+        return true;
+    }
     public void unfollow(String username,String removinguser){
 
     }
