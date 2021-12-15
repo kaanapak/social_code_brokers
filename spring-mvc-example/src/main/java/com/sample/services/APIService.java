@@ -2,9 +2,9 @@ package com.sample.services;
 
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 
 import com.sample.model.Repository;
@@ -18,9 +18,10 @@ import java.net.http.HttpResponse;
 @Service
 public class APIService {
 public static void main (String [] args) throws IOException, InterruptedException {
+    ArrayList<Repository> repo=RepoList("kaanapak");
+//Integer a=CodeCount("kaanapak");
 
-    HttpResponse<String> response=APIReturn("kaanapak");
-System.out.println(response.body());
+
     }
 
     public static HttpResponse<String>  APIReturn(String username) throws IOException, InterruptedException {
@@ -43,21 +44,46 @@ System.out.println(response.body());
     //  Repository object has attriutes name,ıd,date,language and is_starred.(Please look to model/Repository).
     // But you can create repository using new Repository(String name,String ıd,String date) by default is_starred is 0
     //This method finds all repositories of that user
-    public ArrayList<Repository> RepoList(String GitUsername){
+    public static ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException {
         ArrayList<Repository>RepoList=new ArrayList<>();
+        String url = "https://api.github.com/users/"+GitUsername+"/repos";
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
+        System.out.println(response.body());
+        String response_string= response.body().substring( 1, response.body().length() - 1 );
 
+        List<String> ResponseList = new ArrayList<String>(Arrays.asList(response_string.split("},{")));
+        for(int i=0;i<ResponseList.size();i++){
+
+            Map<String, Object> response_map = new ObjectMapper().readValue(ResponseList.get(i), HashMap.class);
+            String RepoName= (String) response_map.get("name");
+            String date= (String) response_map.get("updated_at");
+            String ıd=(String) response_map.get("id");
+            String new_url= (String) response_map.get("languages_url");
+            String language=getLanguage(new_url);
+            Repository repository=new Repository(date,language,ıd,RepoName);
+            RepoList.add(repository);
+        }
+        System.out.println(response.body());
         return  RepoList;
     }
 
     //number of followers at GitHub
-    public Integer FollowerNumber(String GitUsername){
+    public static Integer FollowerNumber(String GitUsername){
         Integer Reponumber=0; //Change this!
         return Reponumber;
     }
 
-    public Integer CodeCount(String GitUsername){
-        Integer CodeCount=0;//Change this!
+    public  static Integer CodeCount(String GitUsername) throws IOException, InterruptedException {
+        String url = "https://api.github.com/users/"+GitUsername;
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+        Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
+        Integer CodeCount= (Integer) response_map.get("public_repos");
         return CodeCount;
     }
 
@@ -66,7 +92,7 @@ System.out.println(response.body());
         return  LanguageCount;
     }
 
-    public Integer ScoreCalculator(String GitUsername){
+    public Integer ScoreCalculator(String GitUsername) throws IOException, InterruptedException {
         Integer Score=10*FollowerNumber(GitUsername)+CodeCount(GitUsername)*15+LanguageCount(GitUsername)*5;
         //Change coefficients!
         return Score;
@@ -85,13 +111,36 @@ return LastRepository;
     }
 
     //Find repository information from ID
-    public Repository getRepository(String RepositoryId){
-        String RepoName="";
-        String date="";
-        String ıd="";
-        String language="";
+    public   Repository getRepository(String RepositoryId) throws IOException, InterruptedException {
+        String url = "https://api.github.com/repositories/"+RepositoryId;
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
+        System.out.println(response.body());
+
+        String RepoName= (String) response_map.get("name");
+        String date= (String) response_map.get("updated_at");
+        String ıd=RepositoryId;
+
+        String new_url= (String) response_map.get("languages_url");
+       String language=getLanguage(new_url);
 
         Repository repository=new Repository(date,language,ıd,RepoName);
         return repository;
+    }
+
+    public static String getLanguage(String url) throws IOException, InterruptedException {
+
+        HttpRequest request2 = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client2 = HttpClient.newBuilder().build();
+        HttpResponse<String> response2 = client2.send(request2, HttpResponse.BodyHandlers.ofString());
+        Map<String, Object> response_map2 = new ObjectMapper().readValue(response2.body(), HashMap.class);
+        System.out.println(response2.body());
+        String language="";
+        for (String key : response_map2.keySet()) {
+            language+=key+",";
+        }
+        return language;
     }
 }

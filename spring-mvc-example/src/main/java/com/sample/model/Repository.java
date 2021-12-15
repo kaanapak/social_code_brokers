@@ -20,6 +20,11 @@ public Repository(String date,String language,String ıd,String name){
         return ıd;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+
     public String toString(){
     String RepoString=date+"|"+language+"|"+ıd+"|"+name+"|"+ıs_starred;
     return RepoString;
