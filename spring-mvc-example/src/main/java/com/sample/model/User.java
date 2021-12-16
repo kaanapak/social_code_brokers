@@ -81,7 +81,7 @@ this.score=score;
         return String.valueOf(text_a);
     }
     public String toStringUserFollowing(){
-        return username+"|"+score+"|"+isFollowing;
+        return username+"|"+score;
     }
     public String toStringStarredRepos(){
         StringBuilder text_a = null;

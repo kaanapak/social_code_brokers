@@ -53,6 +53,7 @@ public class ProfileController {
         searchedUser.setIsFollowing(userService.getIsFollowing(username,searchedUsername));
         searchedUser.setUsername(searchedUsername);
         searchedUser.setRepoList(userService.getRepoList(username));
+        searchedUser.setScore(userService.getScore(searchedUsername));
         model.addAttribute("searchedUser",user);
 
         return "searchedUser";
