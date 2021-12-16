@@ -4,6 +4,7 @@ import com.sample.model.User;
 import com.sample.services.APIService;
 import com.sample.services.ServerService;
 import com.sample.services.UserService;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ public class RankingController {
     }
 
     @PostMapping("/followings")
-    public String followings(Model model, String username,String UnfollowUser,Integer isUnfollow) throws IOException, InterruptedException {
+    public String followings(Model model, String username,String UnfollowUser,Integer isUnfollow) throws IOException, InterruptedException, JSONException {
         if(!Objects.isNull(isUnfollow)){
             serverService.unfollow(username,UnfollowUser);
         }

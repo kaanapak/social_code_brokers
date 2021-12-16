@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sample.model.User;
 import com.sample.services.UserService;
 
+import java.io.IOException;
 import java.util.Objects;
 
 @Controller
@@ -31,7 +32,7 @@ public class EnteredUserController {
     }
     @RequestMapping("/mainPage")
     @PostMapping("/mainPage")
-    public String mainPage(Model model,String username,String password,String GitUsername,String StarredId, Integer isSignIn,Integer isSignup, Integer isAddStar,Integer isRemoveStar){
+    public String mainPage(Model model,String username,String password,String GitUsername,String StarredId, Integer isSignIn,Integer isSignup, Integer isAddStar,Integer isRemoveStar) throws IOException, InterruptedException {
 boolean directMainPage=true;
 String returnpage="";
 

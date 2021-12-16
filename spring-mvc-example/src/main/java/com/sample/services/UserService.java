@@ -61,7 +61,7 @@ public ArrayList <Repository> FollowingRepos(String username){
     return FollowingRepos;
 }
 
-public Integer getScore(String username) throws IOException, InterruptedException {
+public Integer getScore(String username) throws IOException, InterruptedException, JSONException {
     String gitUsername=serverService.getGitUsername(username);
     return apıService.ScoreCalculator(gitUsername);
 }
@@ -74,7 +74,7 @@ public Integer getIsFollowing(String username,String FollowingUsername){
     return ısFollowing;
 }
 
-    public ArrayList<User> setFollowingUserList (String username) throws IOException, InterruptedException {
+    public ArrayList<User> setFollowingUserList (String username) throws IOException, InterruptedException, JSONException {
         ArrayList<User> UserList =new ArrayList<>();
         ArrayList <String> FollowingNames=getFollowings(username);
         for(int i=0;i<FollowingNames.size();i++){

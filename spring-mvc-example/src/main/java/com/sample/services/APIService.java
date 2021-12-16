@@ -20,35 +20,37 @@ import java.net.http.HttpResponse;
 
 @Service
 public class APIService {
-public static void main (String [] args) throws IOException, InterruptedException, JSONException {
-    ArrayList<Repository> repo=RepoList("kaanapak");
-   System.out.println(repo.get(1).getLanguage());
+    public static void main (String [] args) throws IOException, InterruptedException, JSONException {
+
 //Integer a=CodeCount("kaanapak");
 
 
+
+
     }
 
-    public static HttpResponse<String>  APIReturn(String username) throws IOException, InterruptedException {
 
-        String url = "https://api.github.com/users/"+username+"/repos";
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
-        HttpClient client = HttpClient.newBuilder().build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        return response;
-    }
 
     //Is there a github account with that username
 
-    public Boolean isGithub(String GitUsername) {
-
-        return true;
+    public Boolean isGithub(String GitUsername) throws IOException, InterruptedException {
+        String url = "https://api.github.com/users/" + GitUsername;
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
+        if (response_map.containsKey("message") && response_map.get("message").equals("Not Found")) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //  Repository object has attriutes name,ıd,date,language and is_starred.(Please look to model/Repository).
     // But you can create repository using new Repository(String name,String ıd,String date) by default is_starred is 0
     //This method finds all repositories of that user
-    public static ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException, JSONException {
+    public  ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException, JSONException {
+
         ArrayList<Repository>RepoList=new ArrayList<>();
         String url = "https://api.github.com/users/"+GitUsername+"/repos";
         HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
@@ -58,11 +60,11 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
         JSONArray jsonArr = new JSONArray(response.body());
         for (int i = 0; i < jsonArr.length(); i++)
         {
-          String input= String.valueOf(jsonArr.getJSONObject(i));
+            String input= String.valueOf(jsonArr.getJSONObject(i));
             Map<String, Object> response_map = new ObjectMapper().readValue(input, HashMap.class);
             String RepoName= (String) response_map.get("name");
             String date= (String) response_map.get("updated_at");
-           String ıd= String.valueOf(response_map.get("id"));
+            String ıd= String.valueOf(response_map.get("id"));
 
             String new_url= (String) response_map.get("languages_url");
             ArrayList<String> languageList=getLanguage(new_url);
@@ -72,7 +74,6 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
         }
 
      /*      for(int i=0;i<ResponseList.size();i++){
-
             Map<String, Object> response_map = new ObjectMapper().readValue(ResponseList.get(i), HashMap.class);
             String RepoName= (String) response_map.get("name");
             String date= (String) response_map.get("updated_at");
@@ -82,39 +83,57 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
             Repository repository=new Repository(date,language,ıd,RepoName);
             RepoList.add(repository);
         }*/
-        System.out.println(response.body());
         return  RepoList;
     }
 
     //number of followers at GitHub
-    public static Integer FollowerNumber(String GitUsername){
-        Integer Reponumber=0; //Change this!
-        return Reponumber;
+    public Integer FollowerNumber(String GitUsername) throws IOException, InterruptedException {
+        String url = "https://api.github.com/users/" + GitUsername;
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
+        Integer followers= (Integer) response_map.get("followers");
+        return followers;
     }
 
-    public  static Integer CodeCount(String GitUsername) throws IOException, InterruptedException {
+    public  Integer CodeCount(String GitUsername) throws IOException, InterruptedException {
         String url = "https://api.github.com/users/"+GitUsername;
         HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
         Integer CodeCount= (Integer) response_map.get("public_repos");
         return CodeCount;
     }
 
-    public  Integer LanguageCount(String GitUsername){
-        Integer LanguageCount=0;//Change this!
-        return  LanguageCount;
+    public Integer LanguageCount(String GitUsername) throws JSONException, IOException, InterruptedException {
+        String url = "https://api.github.com/users/" + GitUsername + "/repos";
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpClient client = HttpClient.newBuilder().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        JSONArray jsonArr = new JSONArray(response.body());
+        int LanguageCount = 0;
+        for (int i = 0; i < jsonArr.length(); i++) {
+            String input = String.valueOf(jsonArr.getJSONObject(i));
+            Map<String, Object> response_map = new ObjectMapper().readValue(input, HashMap.class);
+
+            String new_url = (String) response_map.get("languages_url");
+            ArrayList<String> languageList = getLanguage(new_url);
+
+            LanguageCount = languageList.size();
+
+        }
+        return LanguageCount;
     }
 
-    public Integer ScoreCalculator(String GitUsername) throws IOException, InterruptedException {
+    public Integer ScoreCalculator(String GitUsername) throws IOException, InterruptedException, JSONException {
         Integer Score=10*FollowerNumber(GitUsername)+CodeCount(GitUsername)*15+LanguageCount(GitUsername)*5;
         //Change coefficients!
         return Score;
     }
 
-//Gives the last repository of that user
+    //Gives the last repository of that user
     public Repository LastRepository(String GitUsername){
         String RepoName="";
         String date="";
@@ -123,7 +142,7 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
 
 
         Repository LastRepository=new Repository(date,languageList,ıd,RepoName);
-return LastRepository;
+        return LastRepository;
     }
 
     //Find repository information from ID
@@ -133,14 +152,13 @@ return LastRepository;
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
-        System.out.println(response.body());
 
         String RepoName= (String) response_map.get("name");
         String date= (String) response_map.get("updated_at");
         String ıd=RepositoryId;
 
         String new_url= (String) response_map.get("languages_url");
-       ArrayList<String> language=getLanguage(new_url);
+        ArrayList<String> language=getLanguage(new_url);
 
         Repository repository=new Repository(date,language,ıd,RepoName);
         return repository;
@@ -152,7 +170,6 @@ return LastRepository;
         HttpClient client2 = HttpClient.newBuilder().build();
         HttpResponse<String> response2 = client2.send(request2, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map2 = new ObjectMapper().readValue(response2.body(), HashMap.class);
-        System.out.println(response2.body());
         //List<String> keys = new ArrayList<>(response_map2.keySet());
         //return String.join(", ", keys);
         return new ArrayList<>(response_map2.keySet());
