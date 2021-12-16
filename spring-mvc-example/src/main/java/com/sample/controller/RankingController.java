@@ -18,8 +18,8 @@ public class RankingController {
     UserService userService=new UserService();
 
     @PostMapping("/starredProjects")
-    public String starredProjects(Model model, String username,String StarredId,Integer IsRemoveStar) throws IOException, InterruptedException {
-        if(!Objects.isNull(IsRemoveStar)){
+    public String starredProjects(Model model, String username,String StarredId,Integer isRemoveStar) throws IOException, InterruptedException {
+        if(!Objects.isNull(isRemoveStar)){
             serverService.removeStarredRepo(username,StarredId);
         }
         User user=new User();
@@ -30,8 +30,8 @@ public class RankingController {
     }
 
     @PostMapping("/followings")
-    public String followings(Model model, String username,String UnfollowUser,Integer IsUnfollow) throws IOException, InterruptedException {
-        if(!Objects.isNull(IsUnfollow)){
+    public String followings(Model model, String username,String UnfollowUser,Integer isUnfollow) throws IOException, InterruptedException {
+        if(!Objects.isNull(isUnfollow)){
             serverService.unfollow(username,UnfollowUser);
         }
         User user=new User();

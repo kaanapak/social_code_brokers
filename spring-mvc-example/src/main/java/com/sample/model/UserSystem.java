@@ -24,4 +24,7 @@ public class UserSystem {
     public ArrayList<String> getUserNameList() {
         return UserNameList;
     }
+    public String toStringUsers(){
+       return String.join(", ", UserNameList);
+    }
 }

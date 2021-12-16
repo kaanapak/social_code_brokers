@@ -1,10 +1,13 @@
 package com.sample.services;
 
+import java.io.DataInput;
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.springframework.stereotype.Service;
 
 import com.sample.model.Repository;
@@ -17,7 +20,7 @@ import java.net.http.HttpResponse;
 
 @Service
 public class APIService {
-public static void main (String [] args) throws IOException, InterruptedException {
+public static void main (String [] args) throws IOException, InterruptedException, JSONException {
     ArrayList<Repository> repo=RepoList("kaanapak");
 //Integer a=CodeCount("kaanapak");
 
@@ -44,18 +47,30 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
     //  Repository object has attriutes name,ıd,date,language and is_starred.(Please look to model/Repository).
     // But you can create repository using new Repository(String name,String ıd,String date) by default is_starred is 0
     //This method finds all repositories of that user
-    public static ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException {
+    public static ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException, JSONException {
         ArrayList<Repository>RepoList=new ArrayList<>();
         String url = "https://api.github.com/users/"+GitUsername+"/repos";
         HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        ArrayList<String> listdata = new ArrayList<String>();
+        JSONArray jsonArr = new JSONArray(response.body());
+        for (int i = 0; i < jsonArr.length(); i++)
+        {
+          String input= String.valueOf(jsonArr.getJSONObject(i));
+            Map<String, Object> response_map = new ObjectMapper().readValue(input, HashMap.class);
+            String RepoName= (String) response_map.get("name");
+            String date= (String) response_map.get("updated_at");
+           String ıd= String.valueOf(response_map.get("id"));
 
-        System.out.println(response.body());
-        String response_string= response.body().substring( 1, response.body().length() - 1 );
+            String new_url= (String) response_map.get("languages_url");
+            String language=getLanguage(new_url);
+            Repository repository=new Repository(date,language,ıd,RepoName);
+            RepoList.add(repository);
 
-        List<String> ResponseList = new ArrayList<String>(Arrays.asList(response_string.split("},{")));
-        for(int i=0;i<ResponseList.size();i++){
+        }
+
+     /*      for(int i=0;i<ResponseList.size();i++){
 
             Map<String, Object> response_map = new ObjectMapper().readValue(ResponseList.get(i), HashMap.class);
             String RepoName= (String) response_map.get("name");
@@ -65,7 +80,7 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
             String language=getLanguage(new_url);
             Repository repository=new Repository(date,language,ıd,RepoName);
             RepoList.add(repository);
-        }
+        }*/
         System.out.println(response.body());
         return  RepoList;
     }
@@ -137,10 +152,7 @@ return LastRepository;
         HttpResponse<String> response2 = client2.send(request2, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map2 = new ObjectMapper().readValue(response2.body(), HashMap.class);
         System.out.println(response2.body());
-        String language="";
-        for (String key : response_map2.keySet()) {
-            language+=key+",";
-        }
-        return language;
+        List<String> keys = new ArrayList<>(response_map2.keySet());
+        return String.join(", ", keys);
     }
 }

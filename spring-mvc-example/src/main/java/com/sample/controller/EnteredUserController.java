@@ -31,11 +31,11 @@ public class EnteredUserController {
     }
     @RequestMapping("/mainPage")
     @PostMapping("/mainPage")
-    public String mainPage(Model model,String username,String password,String GitUsername,String StarredId, Integer IsSıngIn,Integer IsSıgnup, Integer IsAddStar,Integer IsRemoveStar){
+    public String mainPage(Model model,String username,String password,String GitUsername,String StarredId, Integer isSignIn,Integer isSignup, Integer isAddStar,Integer isRemoveStar){
 boolean directMainPage=true;
 String returnpage="";
 
-        if(!Objects.isNull(IsSıngIn)){
+        if(!Objects.isNull(isSignIn)){
             System.out.println("Entered sign in");
             System.out.println(username);
             System.out.println(password);
@@ -45,7 +45,7 @@ String returnpage="";
                 model.addAttribute(error);
                 returnpage="index";
             }
-        }else if(!Objects.isNull(IsSıgnup)){
+        }else if(!Objects.isNull(isSignup)){
             System.out.println("Entered sign up");
             System.out.println(username);
             System.out.println(password);
@@ -65,9 +65,9 @@ String returnpage="";
             }else{
                 serverService.AddUser(username, GitUsername, password);
             }
-        }else if(!Objects.isNull(IsAddStar)){
+        }else if(!Objects.isNull(isAddStar)){
             serverService.addStarredRepo(username,StarredId);
-        }else if(!Objects.isNull(IsRemoveStar)){
+        }else if(!Objects.isNull(isRemoveStar)){
             serverService.removeStarredRepo(username,StarredId);
         }
 
@@ -76,6 +76,7 @@ String returnpage="";
             system.setUserNameList(serverService.UserNameList());
             model.addAttribute("system",system);
             User user=new User();
+            user.setUsername(username);
             user.setFollowingsRepos(userService.FollowingRepos(username));
             model.addAttribute("user",user);
             returnpage="mainPage";

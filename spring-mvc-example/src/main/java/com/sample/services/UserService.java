@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.sample.model.User;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sample.model.Repository;
@@ -18,7 +19,7 @@ public class UserService {
 public String getGitHubUsername(String username){
     return serverService.getGitUsername(username);
 }
-public ArrayList <Repository> getRepoList (String username) throws IOException, InterruptedException {
+public ArrayList <Repository> getRepoList (String username) throws IOException, InterruptedException, JSONException {
     String gitUsername=serverService.getGitUsername(username);
     ArrayList <Repository> RepoList= apıService.RepoList(gitUsername);
 
@@ -81,6 +82,7 @@ public Integer getIsFollowing(String username,String FollowingUsername){
             User user=new User();
             user.setUsername(currentUsername);
             user.setScore(getScore(currentUsername));
+            user.setIsFollowing(getIsFollowing(username,currentUsername));
             UserList.add(user);
         }
         return UserList;

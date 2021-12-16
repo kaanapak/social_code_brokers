@@ -3,6 +3,7 @@ package com.sample.controller;
 import com.sample.model.UserSystem;
 import com.sample.services.APIService;
 import com.sample.services.ServerService;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +25,7 @@ public class ProfileController {
     UserService userService=new UserService();
 
     @PostMapping("/profile")
-    public String profile(Model model,String username) throws IOException, InterruptedException {
+    public String profile(Model model,String username) throws IOException, InterruptedException, JSONException {
         User user=new User();
         user.setUsername(username);
         user.setScore(userService.getScore(username));
@@ -34,14 +35,14 @@ public class ProfileController {
     }
 
     @PostMapping("/searchedUser")
-    public String searchedUser(Model model,String username,String searchedUsername,Integer IsAddStar,Integer IsRemoveStar,String StarredId,Integer IsFollow,Integer IsUnFollow) throws IOException, InterruptedException {
-        if(!Objects.isNull(IsFollow)){
+    public String searchedUser(Model model,String username,String searchedUsername,Integer isAddStar,Integer isRemoveStar,String StarredId,Integer isFollow,Integer isUnFollow) throws IOException, InterruptedException, JSONException {
+        if(!Objects.isNull(isFollow)){
             serverService.addfollowing(username,searchedUsername);
-        }else if(!Objects.isNull(IsUnFollow)){
+        }else if(!Objects.isNull(isUnFollow)){
             serverService.unfollow(username,searchedUsername);
-        }else if(!Objects.isNull(IsAddStar)){
+        }else if(!Objects.isNull(isAddStar)){
             serverService.addStarredRepo(username,StarredId);
-        }else if(!Objects.isNull(IsRemoveStar)){
+        }else if(!Objects.isNull(isRemoveStar)){
             serverService.removeStarredRepo(username,StarredId);
         }
 
