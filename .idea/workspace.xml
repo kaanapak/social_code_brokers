@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Controllers filled,application is connected with services">
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Some methods in APIService and connection of controller with view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/UserSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/followings.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/followings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/searchedUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/searchedUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/RepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/RepositoryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +136,7 @@
       <workItem from="1635334526823" duration="6166000" />
       <workItem from="1639237519064" duration="4984000" />
       <workItem from="1639313286077" duration="25742000" />
-      <workItem from="1639641451298" duration="1369000" />
+      <workItem from="1639641451298" duration="3582000" />
     </task>
     <task id="LOCAL-00001" summary="Created services and started controllers">
       <created>1638995600826</created>
@@ -185,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639591247980</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Some methods in APIService and connection of controller with view">
+      <created>1639643064881</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639643064881</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +202,7 @@
     <MESSAGE value="Created services and started controllers" />
     <MESSAGE value="GitHub API" />
     <MESSAGE value="Controllers filled,application is connected with services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controllers filled,application is connected with services" />
+    <MESSAGE value="Some methods in APIService and connection of controller with view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some methods in APIService and connection of controller with view" />
   </component>
 </project>

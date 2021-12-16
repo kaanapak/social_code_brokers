@@ -22,6 +22,7 @@ import java.net.http.HttpResponse;
 public class APIService {
 public static void main (String [] args) throws IOException, InterruptedException, JSONException {
     ArrayList<Repository> repo=RepoList("kaanapak");
+   System.out.println(repo.get(1).getLanguage());
 //Integer a=CodeCount("kaanapak");
 
 
@@ -64,8 +65,8 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
            String ıd= String.valueOf(response_map.get("id"));
 
             String new_url= (String) response_map.get("languages_url");
-            String language=getLanguage(new_url);
-            Repository repository=new Repository(date,language,ıd,RepoName);
+            ArrayList<String> languageList=getLanguage(new_url);
+            Repository repository=new Repository(date,languageList,ıd,RepoName);
             RepoList.add(repository);
 
         }
@@ -118,10 +119,10 @@ public static void main (String [] args) throws IOException, InterruptedExceptio
         String RepoName="";
         String date="";
         String ıd="";
-        String language="";
+        ArrayList<String> languageList=new ArrayList<>();
 
 
-        Repository LastRepository=new Repository(date,language,ıd,RepoName);
+        Repository LastRepository=new Repository(date,languageList,ıd,RepoName);
 return LastRepository;
     }
 
@@ -139,20 +140,21 @@ return LastRepository;
         String ıd=RepositoryId;
 
         String new_url= (String) response_map.get("languages_url");
-       String language=getLanguage(new_url);
+       ArrayList<String> language=getLanguage(new_url);
 
         Repository repository=new Repository(date,language,ıd,RepoName);
         return repository;
     }
 
-    public static String getLanguage(String url) throws IOException, InterruptedException {
+    public static ArrayList<String> getLanguage(String url) throws IOException, InterruptedException {
 
         HttpRequest request2 = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
         HttpClient client2 = HttpClient.newBuilder().build();
         HttpResponse<String> response2 = client2.send(request2, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map2 = new ObjectMapper().readValue(response2.body(), HashMap.class);
         System.out.println(response2.body());
-        List<String> keys = new ArrayList<>(response_map2.keySet());
-        return String.join(", ", keys);
+        //List<String> keys = new ArrayList<>(response_map2.keySet());
+        //return String.join(", ", keys);
+        return new ArrayList<>(response_map2.keySet());
     }
 }
