@@ -1,7 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+  <script th:inline="javascript">
+    const splitByPunctuations = (str = '') => {
+      let res = [];
+      res = str.split('*');
+      for(let i = 0; i < res.length; i++){
+        res[i] = res[i].split('|');
+      };
+      return res;
+    };
+
+    username=[[${user.getUsername()}]]
+    usernameSearched=[[${ searchedUser.getUsername()}]]
+    scoreSearched=[[${ searchedUser.getScore()}]]
+    repoListSearched=[[${ searchedUser.toStringRepoList()}]]
+    isFallowing=[[${ searchedUser.getIsFollowing()()}]]
+  </script>
   <title>Username's Page</title>
   <link rel="stylesheet" href="./../css/mainPage.css">
 </head>

@@ -1,15 +1,17 @@
 package com.sample.model;
 
+import java.util.ArrayList;
+
 public class Repository {
     private String date;
-    private String language;
     private String ıd;
     private String name;
     private Integer ıs_starred;
+    private ArrayList<String> languageList;
 
-public Repository(String date,String language,String ıd,String name){
+public Repository(String date,ArrayList<String> languageList,String ıd,String name){
     this.date=date;
-    this.language=language;
+    this.languageList=languageList;
     this.ıd=ıd;
     this.name=name;
     ıs_starred=0;
@@ -20,12 +22,36 @@ public Repository(String date,String language,String ıd,String name){
         return ıd;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+
     public String toString(){
-    String RepoString=date+"|"+language+"|"+ıd+"|"+name+"|"+ıs_starred;
+    String RepoString=date+"|"+toStringLanguageList()+"|"+ıd+"|"+name+"|"+ıs_starred;
     return RepoString;
 }
 public void setStarred(){
     ıs_starred=1;
 }
 
+    public String getLanguage() {
+        return toStringLanguageList();
+    }
+
+    public ArrayList<String> getLanguageList() {
+        return languageList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String toStringLanguageList(){
+        return String.join(", ", languageList);
+    }
+
+    public void setLanguageList(ArrayList<String> languageList) {
+        this.languageList = languageList;
+    }
 }

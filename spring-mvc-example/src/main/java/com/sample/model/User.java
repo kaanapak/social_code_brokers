@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String GitHubUsername;
-    private Integer IsFollowing;
+    private Integer isFollowing;
     private ArrayList<Repository> RepoList=new ArrayList<>();
     private ArrayList<String> Followings=new ArrayList<>();
     private ArrayList <User> FollowingUsers=new ArrayList<>();
@@ -62,12 +62,56 @@ this.score=score;
         this.score = score;
     }
     public Integer getIsFollowing() {
-        return IsFollowing;
+        return isFollowing;
     }
     public void setIsFollowing(Integer isFollowing) {
-        IsFollowing = isFollowing;
+        isFollowing = isFollowing;
     }
     public void setFollowingUsers(ArrayList<User> followingUsers) {
         FollowingUsers = followingUsers;
     }
+    public String toStringFollowingUsers(){
+        StringBuilder text_a = null;
+        for(int i=0;i<FollowingUsers.size();i++){
+          text_a.append(FollowingUsers.get(i).toStringUserFollowing());
+            if(i!=FollowingUsers.size()-1){
+                text_a.append("*");
+            }
+        }
+        return String.valueOf(text_a);
+    }
+    public String toStringUserFollowing(){
+        return username+"|"+score;
+    }
+    public String toStringStarredRepos(){
+        StringBuilder text_a = null;
+        for(int i=0;i<StarredRepos.size();i++){
+            text_a.append(StarredRepos.get(i).toString());
+            if(i!=StarredRepos.size()-1){
+                text_a.append("*");
+            }
+        }
+        return String.valueOf(text_a);
+    }
+    public String toStringRepoList(){
+        StringBuilder text_a = null;
+        for(int i=0;i<RepoList.size();i++){
+            text_a.append(RepoList.get(i).toString());
+            if(i!=RepoList.size()-1){
+                text_a.append("*");
+            }
+        }
+        return String.valueOf(text_a);
+    }
+    public String toStringFollowingRepos(){
+        StringBuilder text_a = null;
+        for(int i=0;i<FollowingsRepos.size();i++){
+            text_a.append(FollowingsRepos.get(i).toString());
+            if(i!=FollowingsRepos.size()-1){
+                text_a.append("*");
+            }
+        }
+        return String.valueOf(text_a);
+    }
+
 }

@@ -1,7 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Followed Users</title>
+    <script th:inline="javascript">
+      const splitByPunctuations = (str = '') => {
+        let res = [];
+        res = str.split('*');
+        for(let i = 0; i < res.length; i++){
+          res[i] = res[i].split('|');
+        };
+        return res;
+      };
+     username=[[${user.getUsername()}]]
+      following_list=splitByPunctuations([[${user.toStringFollowingUsers()}]]);
+    </script>
     <link rel="stylesheet" href="../css/mainPage.css" />
   </head>
   <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
