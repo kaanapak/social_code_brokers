@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sample.model.User;
 import com.sample.services.UserService;
 
+import java.sql.SQLException;
 import java.util.Objects;
 
 @Controller
@@ -23,6 +24,9 @@ public class EnteredUserController {
     ServerService serverService=new ServerService();
     APIService apıService=new APIService();
     UserService userService=new UserService();
+
+    public EnteredUserController() throws SQLException {
+    }
 
     @PostMapping("/signUp")
     public String signUp(Model model) {

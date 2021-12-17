@@ -1,33 +1,96 @@
 package com.sample.services;
+import com.sample.configuration.Database;
 import com.sample.model.User;
 import com.sample.model.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 
 @Service
 public class ServerService {
+    @Autowired
+    private  JdbcTemplate jdbctemplate;
 
-    public void AddUser(String username,String GitUsername,String password){
+
+
+    public void AddUser(String username, String GitUsername, String password){
+
+        jdbctemplate.update(
+                "insert into user_1 (username, github_username,password)"  +
+                        "values ('"+username+"','"+GitUsername+"','"+password+"')"
+        );
+
     }
-
+    @Autowired
+    JdbcTemplate conn;
     //There are 2 usernames,one is for our site,one is for the user's account name at GitHub
     public String getGitUsername(String username){
-        return "";
+      /*  List<Map<String, Object>> response = conn.queryForList( //query'de hata alıyoruz
+                "SELECT github_username FROM user_1 where github_username = ?", new Object[]{username}
+        ); */
+        jdbctemplate.update(
+                "SELECT github_username FROM user_1 where github_username = ?"
+        );
+
+        return "username";
+
+
+    }
+    public Boolean isGitFirst(String GitUsername){
+        jdbctemplate.update(
+                "SELECT github_username FROM user_1 where github_username = ?"
+        );
+        if(jdbctemplate==null)
+            return false;
+        return true;
     }
 
     public void DeleteUser(String username){
-
+        String sql = jdbctemplate.queryForObject(
+                "delete from user_1 (username)"  +
+                        "values ('"+username+"')", String.class
+        );
+        jdbctemplate.execute(sql);
     }
 
     //Checks if there is a user with that username
     public Boolean ısFirst(String username){
-        return true;
+        //if(conn == null)
+           // return false;
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT username FROM user_1 where username = ?", new Object[]{username}
+        );
+
+        if(response==null)
+            return false;
+        else
+            return true;
     }
 
     public Boolean PasswordCheck(String username,String password){
-        return true;
+
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT username,password FROM user_1 where username = ? and password = ?", new Object[]{username,password}
+        );
+        if(response.size()==0)
+            return false;
+        else
+            return true;
+
+
     }
 
     public void ChangePassword(String username,String oldPassword,String newPassword){
@@ -74,7 +137,8 @@ public class ServerService {
 
     public ArrayList<String> getFollowingList(String username){
         ArrayList<String> FollowingList=new ArrayList<>();
-            return FollowingList;
-        }
+        return FollowingList;
+    }
 
 }
+

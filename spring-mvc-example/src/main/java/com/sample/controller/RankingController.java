@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class RankingController {
@@ -15,6 +16,9 @@ public class RankingController {
     ServerService serverService=new ServerService();
     APIService apıService=new APIService();
     UserService userService=new UserService();
+
+    public RankingController() throws SQLException {
+    }
 
     @PostMapping("/starredProjects")
     public String starredProjects(Model model, String username,String StarredId,Integer IsRemoveStar) {

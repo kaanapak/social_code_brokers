@@ -1,5 +1,6 @@
 package com.sample.services;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.sample.model.User;
@@ -14,7 +15,9 @@ public class UserService {
     APIService apıService=new APIService();
 
 
-public String getGitHubUsername(String username){
+
+
+    public String getGitHubUsername(String username){
     return serverService.getGitUsername(username);
 }
 public ArrayList <Repository> getRepoList (String username){
