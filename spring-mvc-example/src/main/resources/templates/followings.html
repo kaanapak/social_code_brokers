@@ -13,18 +13,37 @@
       };
      username=[[${user.getUsername()}]]
       following_list=splitByPunctuations([[${user.toStringFollowingUsers()}]]);
+
+      function sortAlphabetically() {
+        starred_list.sort((a, b) => {
+          return a.item - b.item;
+        });
+        return starred_list
+      }
+      function sortLastAdded() {
+        starred_list.sort((a, b) => {
+          return a.time - b.time;
+        });
+        return starred_list
+      }
+      function sortScore() {
+        starred_list.sort((a, b) => {
+          return a.score - b.score;
+        });
+        return starred_list
+      }
     </script>
-    <link rel="stylesheet" href="../css/mainPage.css" />
+    <link rel="stylesheet" href="./../static/css/mainPage.css" />
   </head>
   <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
   <div>
   <div class="navbar">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#news">Following Users</a></li>
-      <li><a href="#contact">Stared Repos</a></li>
-      <li><a href="#about">Invite User</a></li>
-      <li style="float: right"><a href="#news">Welcome ....</a></li>
+      <li><a href="/mainPage">Home</a></li>
+      <li><a href="/followings">Following Users</a></li>
+      <li><a href="/starredRepos">Stared Repos</a></li>
+      <li><buttton id="invite">Invite User</buttton></li>
+      <li style="float: right"><a>Welcome ....</a></li>
     </ul>
   </div>
   <div class="wrap">
@@ -35,14 +54,14 @@
     <h1>Followed Users</h1>
     <div class="filterContainer">
       <h3>Filters:</h3>
-      <button type="submit"class="filterButton">Alphabetically</button>
-      <button type="submit" class="filterButton">Last Added</button>
-      <button type="submit" class="filterButton">Score</button>
+      <button type="submit" onclick="sortAlphabetically()" class="filterButton">Alphabetically</button>
+      <button type="submit" onclick="sortLastAdded()" class="filterButton">Last Added</button>
+      <button type="submit" onclick="sortScore()" class="filterButton">Score</button>
   </div>
     <div class="followingsContainer">
       <div class="profilePicture">
       </div>
-      <br></br>
+      <br>
         <h1>USERNAME - SCORE</h1>
         
     </div>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class RankingController {
@@ -17,7 +18,7 @@ public class RankingController {
     UserService userService=new UserService();
 
     @PostMapping("/starredProjects")
-    public String starredProjects(Model model, String username,String StarredId,Integer IsRemoveStar) {
+    public String starredProjects(Model model, String username,String StarredId,Integer IsRemoveStar) throws IOException, InterruptedException {
         if(!Objects.isNull(IsRemoveStar)){
             serverService.removeStarredRepo(username,StarredId);
         }
@@ -29,7 +30,7 @@ public class RankingController {
     }
 
     @PostMapping("/followings")
-    public String followings(Model model, String username,String UnfollowUser,Integer IsUnfollow) {
+    public String followings(Model model, String username,String UnfollowUser,Integer IsUnfollow) throws IOException, InterruptedException {
         if(!Objects.isNull(IsUnfollow)){
             serverService.unfollow(username,UnfollowUser);
         }

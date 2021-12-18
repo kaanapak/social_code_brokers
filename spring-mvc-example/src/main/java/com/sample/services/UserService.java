@@ -1,5 +1,6 @@
 package com.sample.services;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.sample.model.User;
@@ -17,7 +18,7 @@ public class UserService {
 public String getGitHubUsername(String username){
     return serverService.getGitUsername(username);
 }
-public ArrayList <Repository> getRepoList (String username){
+public ArrayList <Repository> getRepoList (String username) throws IOException, InterruptedException {
     String gitUsername=serverService.getGitUsername(username);
     ArrayList <Repository> RepoList= apıService.RepoList(gitUsername);
 
@@ -34,7 +35,7 @@ public ArrayList <String> getFollowings (String username){
     return followings;
 }
 
-public ArrayList<Repository> starredRepos (String username){
+public ArrayList<Repository> starredRepos (String username) throws IOException, InterruptedException {
     ArrayList <String> StarredId= serverService.getStarredRepoList(username);
     ArrayList <Repository> StarredRepos=new ArrayList<>();
 for(int i=0;i<StarredId.size();i++){
@@ -59,7 +60,7 @@ public ArrayList <Repository> FollowingRepos(String username){
     return FollowingRepos;
 }
 
-public Integer getScore(String username){
+public Integer getScore(String username) throws IOException, InterruptedException {
     String gitUsername=serverService.getGitUsername(username);
     return apıService.ScoreCalculator(gitUsername);
 }
@@ -72,7 +73,7 @@ public Integer getIsFollowing(String username,String FollowingUsername){
     return ısFollowing;
 }
 
-    public ArrayList<User> setFollowingUserList (String username){
+    public ArrayList<User> setFollowingUserList (String username) throws IOException, InterruptedException {
         ArrayList<User> UserList =new ArrayList<>();
         ArrayList <String> FollowingNames=getFollowings(username);
         for(int i=0;i<FollowingNames.size();i++){
