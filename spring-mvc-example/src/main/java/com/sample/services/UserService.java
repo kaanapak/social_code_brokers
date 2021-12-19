@@ -47,7 +47,7 @@ for(int i=0;i<StarredId.size();i++){
     return StarredRepos;
 }
 
-public ArrayList <Repository> FollowingRepos(String username){
+public ArrayList <Repository> FollowingRepos(String username) throws IOException, InterruptedException, JSONException {
     String gitUsername=serverService.getGitUsername(username);
     ArrayList <String> followings=getFollowings(username);
     ArrayList <Repository> FollowingRepos=new ArrayList<>();

@@ -18,10 +18,14 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import static org.apache.coyote.http11.Constants.a;
+
 @Service
 public class APIService {
-    public static void main (String [] args) throws IOException, InterruptedException, JSONException {
+    private static Repository LastRepository;
 
+    public static void main (String [] args) throws IOException, InterruptedException, JSONException {
+        System.out.println(LastRepository("kaanapak"));
 //Integer a=CodeCount("kaanapak");
 
 
@@ -49,7 +53,7 @@ public class APIService {
     //  Repository object has attriutes name,ıd,date,language and is_starred.(Please look to model/Repository).
     // But you can create repository using new Repository(String name,String ıd,String date) by default is_starred is 0
     //This method finds all repositories of that user
-    public  ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException, JSONException {
+    public static ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException, JSONException {
 
         ArrayList<Repository>RepoList=new ArrayList<>();
         String url = "https://api.github.com/users/"+GitUsername+"/repos";
@@ -63,7 +67,9 @@ public class APIService {
             String input= String.valueOf(jsonArr.getJSONObject(i));
             Map<String, Object> response_map = new ObjectMapper().readValue(input, HashMap.class);
             String RepoName= (String) response_map.get("name");
-            String date= (String) response_map.get("updated_at");
+            String firstdate=(String) response_map.get("updated_at");
+           String date =firstdate.substring(0,9)+" " + firstdate.substring(10,17);
+
             String ıd= String.valueOf(response_map.get("id"));
 
             String new_url= (String) response_map.get("languages_url");
@@ -134,15 +140,12 @@ public class APIService {
     }
 
     //Gives the last repository of that user
-    public Repository LastRepository(String GitUsername){
-        String RepoName="";
-        String date="";
-        String ıd="";
-        ArrayList<String> languageList=new ArrayList<>();
+    public static Repository LastRepository(String GitUsername) throws IOException, InterruptedException, JSONException {
+        ArrayList<Repository>RepoList= RepoList(GitUsername);
 
 
-        Repository LastRepository=new Repository(date,languageList,ıd,RepoName);
-        return LastRepository;
+
+        return RepoList.get(0);
     }
 
     //Find repository information from ID
@@ -174,4 +177,6 @@ public class APIService {
         //return String.join(", ", keys);
         return new ArrayList<>(response_map2.keySet());
     }
+
+
 }

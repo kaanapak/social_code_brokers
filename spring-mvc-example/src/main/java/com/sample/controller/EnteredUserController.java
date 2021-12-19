@@ -15,7 +15,6 @@ import com.sample.model.User;
 import com.sample.services.UserService;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 @Controller
@@ -38,8 +37,7 @@ boolean directMainPage=true;
 String returnpage="";
 
         if(!Objects.isNull(IsSıngIn)){
-            ArrayList<String> users = serverService.UserNameList();
-            System.out.println(users);
+            serverService.isGitFirst("kaanapak");
             System.out.println("Entered sign in");
             System.out.println(username);
             System.out.println(password);
