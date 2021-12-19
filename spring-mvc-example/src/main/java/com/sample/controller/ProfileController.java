@@ -3,6 +3,7 @@ package com.sample.controller;
 import com.sample.model.UserSystem;
 import com.sample.services.APIService;
 import com.sample.services.ServerService;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sample.model.User;
 import com.sample.services.UserService;
 
+import java.io.IOException;
 import java.util.Objects;
 
 @Controller
@@ -23,7 +25,7 @@ public class ProfileController {
     UserService userService=new UserService();
 
     @PostMapping("/profile")
-    public String profile(Model model,String username) {
+    public String profile(Model model,String username) throws JSONException, IOException, InterruptedException {
         User user=new User();
         user.setUsername(username);
         user.setScore(userService.getScore(username));
@@ -33,7 +35,7 @@ public class ProfileController {
     }
 
     @PostMapping("/searchedUser")
-    public String searchedUser(Model model,String username,String searchedUsername,Integer IsAddStar,Integer IsRemoveStar,String StarredId,Integer IsFollow,Integer IsUnFollow) {
+    public String searchedUser(Model model,String username,String searchedUsername,Integer IsAddStar,Integer IsRemoveStar,String StarredId,Integer IsFollow,Integer IsUnFollow) throws JSONException, IOException, InterruptedException {
         if(!Objects.isNull(IsFollow)){
             serverService.addfollowing(username,searchedUsername);
         }else if(!Objects.isNull(IsUnFollow)){

@@ -37,6 +37,7 @@ boolean directMainPage=true;
 String returnpage="";
 
         if(!Objects.isNull(IsSıngIn)){
+            serverService.isGitFirst("kaanapak");
             System.out.println("Entered sign in");
             System.out.println(username);
             System.out.println(password);
@@ -47,6 +48,7 @@ String returnpage="";
                 returnpage="index";
             }
         }else if(!Objects.isNull(IsSıgnup)){
+
             System.out.println("Entered sign up");
             System.out.println(username);
             System.out.println(password);
@@ -74,10 +76,10 @@ String returnpage="";
 
         if(directMainPage){
             UserSystem system=new UserSystem();
-            system.setUserNameList(serverService.UserNameList());
+           // system.setUserNameList(serverService.UserNameList());
             model.addAttribute("system",system);
             User user=new User();
-            user.setFollowingsRepos(userService.FollowingRepos(username));
+           // user.setFollowingsRepos(userService.FollowingRepos(username));
             model.addAttribute("user",user);
             returnpage="mainPage";
 

@@ -38,14 +38,29 @@ public class ServerService {
     JdbcTemplate conn;
     //There are 2 usernames,one is for our site,one is for the user's account name at GitHub
     public String getGitUsername(String username){
-      /*  List<Map<String, Object>> response = conn.queryForList( //query'de hata alıyoruz
-                "SELECT github_username FROM user_1 where github_username = ?", new Object[]{username}
-        ); */
-        jdbctemplate.update(
-                "SELECT github_username FROM user_1 where github_username = ?"
-        );
+      /* List<Map<String, Object>> response = conn.queryForList( //query'de hata alıyoruz
+                "SELECT github_username FROM user_1 where username = ?", new Object[]{username}
+        );*/
 
-        return "username";
+       // String sql = "SELECT github_username FROM user_1 where username = ?";
+       /* jdbctemplate.query(
+                "SELECT github_username FROM user_1 where username = ?"
+        ); */
+        //String git = jdbctemplate.queryForObject(sql, String.class);
+        //return git;
+        /*return jdbctemplate.queryForObject(
+                sql, new Object[]{username}, String.class);*/
+       /* var sql = "SELECT COUNT(*) FROM user_1";
+
+        int numOfCars = jdbctemplate.queryForObject(sql, Integer.class);
+        System.out.println(numOfCars);
+        return "kaanapak"; */
+
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT github_username FROM user_1 where username = ?", new Object[]{username}
+        );
+        System.out.println("Response "+response.get(0).get("github_username"));
+        return String.valueOf(response.get(0).get("github_username"));
 
 
     }
