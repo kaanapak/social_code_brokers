@@ -3,6 +3,7 @@
 
 <head>
     <title>Starred Projects</title>
+    <link rel="stylesheet" href="../static/mainPage.css" />
     <script th:inline="javascript">
         const splitByPunctuations = (str = '') => {
             let res = [];
@@ -14,40 +15,51 @@
         };
         username=[[${user.getUsername()}]]
         starred_list=splitByPunctuations([[${user.toStringStarredRepos()}]]);
+        function sortAlphabetically() {
+            starred_list.sort((a, b) => {
+                return a.item - b.item;
+            });
+            return starred_list
+        }
+        function sortLastAdded() {
+             starred_list.sort((a, b) => {
+                return a.time - b.time;
+            });
+            return starred_list
+        }
+        function sortScore() {
+            starred_list.sort((a, b) => {
+                return a.score - b.score;
+            });
+            return starred_list
+        }
     </script>
-    <link rel="stylesheet" href="../css/mainPage.css" />
+    <link rel="stylesheet" href="./../static/css/mainPage.css" />
 </head>
 
 <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
     <div>
         <div class="navbar">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#news">Following Users</a></li>
-                <li><a href="#contact">Stared Repos</a></li>
-                <li><a href="#about">Invite User</a></li>
-                <li style="float: right"><a href="#news">Welcome ....</a></li>
+                <li><a href="/mainPage">Home</a></li>
+                <li><a href="/followings">Following Users</a></li>
+                <li><a href="/starredRepos">Starred Repos</a></li>
+                <li><a id="invite"><button onclick="">Invite User</button></a></li>
+                <li style="float: right"><a href="/profile"> Welcome .... </a></li>
             </ul>
         </div>
-        <div class="wrap">
             <div class="search">
                 <input type="text" class="searchTerm" placeholder="Search user">
-                <button type="submit" class="searchButton">Submit</button>
+                <button onclick="" type="submit" class="searchButton">Search User</button>
             </div>
             <div class="filterContainer">
                 <h3>Filters:</h3>
-                <button type="submit" class="filterButton">Alphabetically</button>
-                <button type="submit"class="filterButton">Last Added</button>
-                <button type="submit" class="filterButton">Score</button>
+                <button type="submit" onclick="sortAlphabetically()" class="filterButton">Alphabetically</button>
+                <button type="submit" onclick="sortLastAdded()" class="filterButton">Last Added</button>
+                <button type="submit" onclick="sortScore()" class="filterButton">Score</button>
             </div>
             <div class="projectContainer">
-                <span>dfjdfjdfjdfj</span>
-                <text>dfjdfjdfjdfj</text>
-                <text>dfjdfjdfjdfj</text>
-                <text>dfjdfjdfjdfj</text>
-                <h1>Proejcts go here</h1>
-                <h1>Proejcts go here</h1>
-                <h1>Proejcts go here</h1>
+                <script>starred_list.map(item => <span>${item}</span>)</script>
             </div>
         </div>
     </div>
