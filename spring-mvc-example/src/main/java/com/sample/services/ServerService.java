@@ -74,11 +74,8 @@ public class ServerService {
     }
 
     public void DeleteUser(String username){
-        String sql = jdbctemplate.queryForObject(
-                "delete from user_1 (username)"  +
-                        "values ('"+username+"')", String.class
-        );
-        jdbctemplate.execute(sql);
+        String deleteQuery = "delete from user_1 where username = ?";
+        jdbctemplate.update(deleteQuery,new Object[]{username});
     }
 
     //Checks if there is a user with that username
@@ -115,43 +112,97 @@ public class ServerService {
     //Return list of username list
     public ArrayList <String> UserNameList(){
         ArrayList<String> UserNameList=new ArrayList<>();
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT username FROM user_1");
+        for(int i = 0; i < response.size(); i++){
+            UserNameList.add(String.valueOf(response.get(i).get("username")));
+        }
+        System.out.println("ResponseU "+response);
+
         return  UserNameList;
     }
 
     //Adds starred repo to that username. In database there will be a list of starred repositories for each user.
     //We will hold only ID of each starred repository
     public void addStarredRepo(String username,String repository_Id){
-
+        jdbctemplate.update(
+                "insert into repo (username, repo_id)"  +
+                        "values ('"+username+"','"+repository_Id+"')"
+        );
     }
 
     public void removeStarredRepo(String username,String repository_Id){
-
+        String deleteQuery = "delete from repo where username = ? and repo_id = ?";
+        jdbctemplate.update(deleteQuery,new Object[]{username,repository_Id});
     }
 
     public ArrayList<String> getStarredRepoList(String username){
         ArrayList<String> RepoList=new ArrayList<>();
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT repo_id FROM follow where username = ?", new Object[]{username}
+        );
+        for(int i = 0; i < response.size(); i++){
+            RepoList.add(String.valueOf(response.get(i).get("repo_id")));
+        }
+        System.out.println("ResponseU "+response);
+        //return String.valueOf(response.get(0).get("github_username"));
+
         return RepoList;
     }
 
     //Checks if id is in that user's starredrepo list
     public Boolean isStarred(String username,String Id){
-        return false;
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT username,repo_id FROM repo where username = ? and repo_id = ?", new Object[]{username,Id}
+        );
+        if(response.size()==0)
+            return false;
+        else
+            return true;
     }
 
     //We can hold username of each following user
     public void addfollowing(String username,String new_following_user){
-
+        jdbctemplate.update(
+                "insert into follow (username, following)"  +
+                        "values ('"+username+"','"+new_following_user+"')"
+        );
     }
 
     public Boolean isFollowing (String username,String FollowingUsername){
-        return true;
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT username,following FROM follow where username = ? and following = ?", new Object[]{username,FollowingUsername}
+        );
+        if(response.size()==0)
+            return false;
+        else
+            return true;
+
+
     }
     public void unfollow(String username,String removinguser){
-
+       /* jdbctemplate.update(
+                "delete from follow (username, following)"  +
+                        "values ('"+username+"','"+GitUsername+"','"+password+"')"
+        ); */
+       /* String sql = jdbctemplate.update(
+                "delete FROM follow where username =" +  username + "and following =" + removinguser
+        );
+        jdbctemplate.execute(sql); */
+        String deleteQuery = "delete from follow where username = ? and following = ?";
+        jdbctemplate.update(deleteQuery,new Object[]{username,removinguser});
     }
 
     public ArrayList<String> getFollowingList(String username){
         ArrayList<String> FollowingList=new ArrayList<>();
+        List<Map<String, Object>> response = conn.queryForList(
+                "SELECT following FROM follow where username = ?", new Object[]{username}
+        );
+        for(int i = 0; i < response.size(); i++){
+            FollowingList.add(String.valueOf(response.get(i).get("following")));
+        }
+        System.out.println("ResponseU "+response);
+        //return String.valueOf(response.get(0).get("github_username"));
         return FollowingList;
     }
 

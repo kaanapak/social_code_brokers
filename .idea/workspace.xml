@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Some queries added but line 44 must change.">
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="server problem solved">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cea1e3c1-9ef5-4c34-ad55-cc4821b1de6a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cea1e3c1-9ef5-4c34-ad55-cc4821b1de6a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../github-api-main" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32528734" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -215,7 +211,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639746262713</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="server problem solved">
+      <created>1639921256517</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639921256517</updated>
+    </task>
+    <task id="LOCAL-00010" summary="server problem solved">
+      <created>1639921492023</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1639921492023</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +250,7 @@
     <MESSAGE value="Some methods in APIService and connection of controller with view" />
     <MESSAGE value="Small improvements" />
     <MESSAGE value="Some queries added but line 44 must change." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some queries added but line 44 must change." />
+    <MESSAGE value="server problem solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="server problem solved" />
   </component>
 </project>
