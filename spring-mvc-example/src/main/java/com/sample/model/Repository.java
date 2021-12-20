@@ -24,6 +24,12 @@ public Repository(){
     this.name="jdsnjnf";
 }
 
+    public Repository(String date, String ıd, String name) {
+        this.date = date;
+        this.ıd = ıd;
+        this.name = name;
+    }
+
     public String getId() {
         return ıd;
     }
