@@ -55,8 +55,8 @@ public class ServerService {
         int numOfCars = jdbctemplate.queryForObject(sql, Integer.class);
         System.out.println(numOfCars);
         return "kaanapak"; */
-
-        List<Map<String, Object>> response = conn.queryForList(
+System.out.println("k "+username);
+        List<Map<String, Object>> response = jdbctemplate.queryForList(
                 "SELECT github_username FROM user_1 where username = ?", new Object[]{username}
         );
         System.out.println("Response "+response.get(0).get("github_username"));
@@ -65,11 +65,11 @@ public class ServerService {
 
     }
     public Boolean isGitFirst(String GitUsername){
-        jdbctemplate.update(
+       /* jdbctemplate.update(
                 "SELECT github_username FROM user_1 where github_username = ?"
         );
         if(jdbctemplate==null)
-            return false;
+            return false;*/
         return true;
     }
 

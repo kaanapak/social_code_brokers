@@ -8,6 +8,7 @@ public class Repository {
     private String name;
     private Integer ıs_starred;
     private ArrayList<String> languageList;
+    private String owner;
 
 public Repository(String date,ArrayList<String> languageList,String ıd,String name){
     this.date=date;
@@ -16,6 +17,11 @@ public Repository(String date,ArrayList<String> languageList,String ıd,String n
     this.name=name;
     ıs_starred=0;
 
+}
+public Repository(){
+    this.date="4343434";
+    this.ıd="kekemn";
+    this.name="jdsnjnf";
 }
 
     public String getId() {
@@ -28,7 +34,7 @@ public Repository(String date,ArrayList<String> languageList,String ıd,String n
 
 
     public String toString(){
-    String RepoString=date+"|"+toStringLanguageList()+"|"+ıd+"|"+name+"|"+ıs_starred;
+    String RepoString=date+"|"+toStringLanguageList()+"|"+ıd+"|"+name+"|"+ıs_starred+"|"+owner;
     return RepoString;
 }
 public void setStarred(){
@@ -53,5 +59,9 @@ public void setStarred(){
 
     public void setLanguageList(ArrayList<String> languageList) {
         this.languageList = languageList;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 }

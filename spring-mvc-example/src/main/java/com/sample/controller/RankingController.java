@@ -1,5 +1,6 @@
 package com.sample.controller;
 
+import com.sample.model.Repository;
 import com.sample.model.User;
 import com.sample.services.APIService;
 import com.sample.services.ServerService;
@@ -10,13 +11,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class RankingController {
     @Autowired
     ServerService serverService=new ServerService();
     APIService apıService=new APIService();
-    UserService userService=new UserService();
 
     @PostMapping("/starredProjects")
     public String starredProjects(Model model, String username,String StarredId,Integer IsRemoveStar) throws IOException, InterruptedException {
@@ -25,7 +26,14 @@ public class RankingController {
         }
         User user=new User();
         user.setUsername(username);
-        user.setStarredRepos(userService.starredRepos(username));
+        ArrayList<String> StarredList= serverService.getStarredRepoList(username);
+        ArrayList <Repository> StarredRepos=new ArrayList<>();
+        for(int i=0;i<StarredList.size();i++){
+            Repository repo= apıService.getRepository(StarredList.get(i));
+            repo.setStarred();
+            StarredRepos.add(repo);
+        }
+        user.setStarredRepos(StarredRepos);
         model.addAttribute("user",user);
         return "starredProjects";
     }
@@ -37,7 +45,18 @@ public class RankingController {
         }
         User user=new User();
         user.setUsername(username);
-        user.setFollowingUsers(userService.setFollowingUserList(username));
+        ArrayList<User> UserList =new ArrayList<>();
+        ArrayList <String> FollowingNames=serverService.getFollowingList(username);
+
+        for(int i=0;i<FollowingNames.size();i++){
+            String currentUsername=FollowingNames.get(i);
+            User userF=new User();
+            userF.setUsername(currentUsername);
+            userF.setScore(apıService.ScoreCalculator(serverService.getGitUsername(currentUsername)));
+            userF.setGitHubUsername(serverService.getGitUsername(currentUsername));
+            UserList.add(userF);
+        }
+        user.setFollowingUsers(UserList);
         model.addAttribute("user",user);
         return "followings";
     }

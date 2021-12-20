@@ -10,9 +10,14 @@
               };
               return res;
           };
+
           username=[[${user.getUsername()}]]
+          console.log(username)
+          userList=[[${system.toStringUsers()}]].split(',');
+          console.log([[${user.toStringFollowingRepos()}]])
+          console.log(userList)
           followingReposList=splitByPunctuations([[${user.toStringFollowingRepos()}]]);
-          userList=splitByPunctuations([[${system.toStringUsers()}]]);
+          console.log(followingReposList)
       </script>
     <title>Social CodeBrokers</title>
     <link rel="stylesheet" href="./../static/css/mainPage.css" />
@@ -41,7 +46,7 @@
         <h1>Proejcts go here</h1>
         <h1>Proejcts go here</h1>
         <h1>Proejcts go here</h1>
-        
+
     </div>
  </div>
 </div>

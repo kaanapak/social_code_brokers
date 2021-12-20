@@ -11,6 +11,7 @@ public class User {
     private ArrayList <User> FollowingUsers=new ArrayList<>();
     private ArrayList<Repository> StarredRepos=new ArrayList<>();
     private ArrayList<Repository> FollowingsRepos=new ArrayList<>();
+    private String StringFollowingRepos;
     private  double score;
 
 
@@ -71,47 +72,63 @@ this.score=score;
         FollowingUsers = followingUsers;
     }
     public String toStringFollowingUsers(){
-        StringBuilder text_a = null;
+        String text_a ="";
         for(int i=0;i<FollowingUsers.size();i++){
-          text_a.append(FollowingUsers.get(i).toStringUserFollowing());
+          text_a+=FollowingUsers.get(i).toStringUserFollowing();
             if(i!=FollowingUsers.size()-1){
-                text_a.append("*");
+                text_a+="*";
             }
         }
         return String.valueOf(text_a);
     }
     public String toStringUserFollowing(){
-        return username+"|"+score;
+        return username+"|"+GitHubUsername+"|"+score;
     }
     public String toStringStarredRepos(){
-        StringBuilder text_a = null;
+        String text_a = "";
         for(int i=0;i<StarredRepos.size();i++){
-            text_a.append(StarredRepos.get(i).toString());
+            text_a+=StarredRepos.get(i).toString();
             if(i!=StarredRepos.size()-1){
-                text_a.append("*");
+                text_a+="*";
             }
         }
         return String.valueOf(text_a);
     }
     public String toStringRepoList(){
-        StringBuilder text_a = null;
+        String text_a = "";
         for(int i=0;i<RepoList.size();i++){
-            text_a.append(RepoList.get(i).toString());
+            text_a+=RepoList.get(i).toString();
             if(i!=RepoList.size()-1){
-                text_a.append("*");
+                text_a+="*";
             }
         }
         return String.valueOf(text_a);
     }
     public String toStringFollowingRepos(){
-        StringBuilder text_a = null;
+        String text_a = "";
         for(int i=0;i<FollowingsRepos.size();i++){
-            text_a.append(FollowingsRepos.get(i).toString());
+            text_a+=FollowingsRepos.get(i).toString();
             if(i!=FollowingsRepos.size()-1){
-                text_a.append("*");
+                text_a+="*";
             }
         }
+        System.out.println("kkkkk: "+String.valueOf(text_a));
         return String.valueOf(text_a);
     }
 
+    public void setStringFollowingRepos(String stringFollowingRepos) {
+        StringFollowingRepos = stringFollowingRepos;
+    }
+
+    public String getStringFollowingRepos() {
+        return StringFollowingRepos;
+    }
+
+    public String getGitHubUsername() {
+        return GitHubUsername;
+    }
+
+    public void setGitHubUsername(String gitHubUsername) {
+        GitHubUsername = gitHubUsername;
+    }
 }

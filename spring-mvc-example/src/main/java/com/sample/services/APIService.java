@@ -134,15 +134,10 @@ public class APIService {
     }
 
     //Gives the last repository of that user
-    public Repository LastRepository(String GitUsername){
-        String RepoName="";
-        String date="";
-        String ıd="";
-        ArrayList<String> languageList=new ArrayList<>();
+    public Repository LastRepository(String GitUsername) throws InterruptedException, JSONException, IOException {
 
 
-        Repository LastRepository=new Repository(date,languageList,ıd,RepoName);
-        return LastRepository;
+        return RepoList(GitUsername).get(0);
     }
 
     //Find repository information from ID

@@ -13,9 +13,11 @@ import java.sql.SQLException;
 
 @Configuration
 public class Database {
-    String url = "jdbc:mysql://localhost:3306";
+    String url = "jdbc:mysql://localhost:3306/cs_320?serverTimezone=UTC";
     String username = "root";
-    String password = "databasesystems";
+    String password = "647400";
+
+
     Connection connection = DriverManager.getConnection(url, username, password);
 
     public Database() throws SQLException {

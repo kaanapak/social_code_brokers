@@ -6,15 +6,17 @@ import java.util.ArrayList;
 import com.sample.model.User;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import com.sample.model.Repository;
+
 
 @Service
 public class UserService {
     @Autowired
     ServerService serverService=new ServerService();
     APIService apıService=new APIService();
-
+    private JdbcTemplate jdbctemplate;
 
 public String getGitHubUsername(String username){
     return serverService.getGitUsername(username);
@@ -47,17 +49,10 @@ for(int i=0;i<StarredId.size();i++){
     return StarredRepos;
 }
 
-public ArrayList <Repository> FollowingRepos(String username){
-    String gitUsername=serverService.getGitUsername(username);
-    ArrayList <String> followings=getFollowings(username);
+public ArrayList <Repository> FollowingRepos(String username,String gitUserame,ArrayList<String>followings){
+
     ArrayList <Repository> FollowingRepos=new ArrayList<>();
-    for(int i=0;i<followings.size();i++){
-        Repository repo= apıService.LastRepository(gitUsername);
-        if(serverService.isStarred(username,repo.getId())){
-            repo.setStarred();
-        }
-        FollowingRepos.add(repo);
-    }
+
     return FollowingRepos;
 }
 
