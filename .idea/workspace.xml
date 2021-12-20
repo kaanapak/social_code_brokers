@@ -22,25 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="server problem solved">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cea1e3c1-9ef5-4c34-ad55-cc4821b1de6a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cea1e3c1-9ef5-4c34-ad55-cc4821b1de6a.xml" afterDir="false" />
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Important change&#10;Controller errors solved&#10;HTML connection done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/configuration/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/configuration/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/searchedUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/searchedUser.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +178,7 @@
       <workItem from="1639313286077" duration="25742000" />
       <workItem from="1639641451298" duration="10027000" />
       <workItem from="1639927546754" duration="10262000" />
-      <workItem from="1639999218488" duration="7059000" />
+      <workItem from="1639999218488" duration="7991000" />
     </task>
     <task id="LOCAL-00001" summary="Created services and started controllers">
       <created>1638995600826</created>
@@ -266,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639921492023</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Important change&#10;Controller errors solved&#10;HTML connection done">
+      <created>1640011747830</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1640011747830</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +283,8 @@
     <MESSAGE value="Small improvements" />
     <MESSAGE value="Some queries added but line 44 must change." />
     <MESSAGE value="server problem solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="server problem solved" />
+    <MESSAGE value="Important change&#10;Controller errors solved&#10;HTML connection done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Important change&#10;Controller errors solved&#10;HTML connection done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="182" key="#SQL_Dialects" timestamp="1639949673465">
@@ -307,38 +299,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="389" y="103" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1639928244671" />
-    <state width="943" height="63" key="GridCell.Tab.0.bottom" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.0.bottom" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
-    <state width="943" height="63" key="GridCell.Tab.0.center" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.0.center" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
-    <state width="943" height="63" key="GridCell.Tab.0.left" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.0.left" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
-    <state width="943" height="63" key="GridCell.Tab.0.right" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.0.right" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
-    <state width="943" height="63" key="GridCell.Tab.1.bottom" timestamp="1640010053441">
+    <state width="942" height="54" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.1.bottom" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640010053441" />
-    <state width="943" height="63" key="GridCell.Tab.1.center" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.1.center" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
-    <state width="943" height="63" key="GridCell.Tab.1.left" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.1.left" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
-    <state width="943" height="63" key="GridCell.Tab.1.right" timestamp="1640010053440">
+    <state width="942" height="54" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
+    <state width="942" height="54" key="GridCell.Tab.1.right" timestamp="1640012578179">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="943" height="63" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640010053440" />
+    <state width="942" height="54" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640012578179" />
     <state width="1010" height="204" key="GridCell.Tab.2.bottom" timestamp="1639998732328">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -359,10 +351,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1639948660986" />
+    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1640011779141">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1640011779141" />
     <state x="-301" y="0" key="SettingsEditor" timestamp="1639928438045">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-301" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1639928438045" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640011831076">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640011831076" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1639948472666">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

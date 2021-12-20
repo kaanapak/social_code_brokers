@@ -63,7 +63,10 @@ public class APIService {
             String input= String.valueOf(jsonArr.getJSONObject(i));
             Map<String, Object> response_map = new ObjectMapper().readValue(input, HashMap.class);
             String RepoName= (String) response_map.get("name");
-            String date= (String) response_map.get("updated_at");
+            String time= (String) response_map.get("updated_at");
+            String date1=time.substring(0,10);
+            String hour=time.substring(11,16);
+            String date=date1+" "+hour;
             String ıd= String.valueOf(response_map.get("id"));
 
             String new_url= (String) response_map.get("languages_url");
@@ -149,7 +152,10 @@ public class APIService {
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
 
         String RepoName= (String) response_map.get("name");
-        String date= (String) response_map.get("updated_at");
+        String time= (String) response_map.get("updated_at");
+        String date1=time.substring(0,9);
+        String hour=time.substring(11,15);
+        String date=date1+" "+hour;
         String ıd=RepositoryId;
 
         String new_url= (String) response_map.get("languages_url");
