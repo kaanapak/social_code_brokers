@@ -36,11 +36,13 @@ public class EnteredUserController {
 
   // @RequestMapping("/mainPage")
     @PostMapping("/mainPage")
+
     public String mainPage(Model model, String username, String password, String GitUsername, String StarredId, Integer IsSıngIn, Integer IsSıgnup, Integer IsAddStar, Integer IsRemoveStar) throws IOException, InterruptedException, JSONException {
         boolean directMainPage = true;
         String returnpage = "";
 
         if (!Objects.isNull(IsSıngIn)) {
+          // serverService.addfollowing("emaden99github","kaanapak");
             if (!serverService.PasswordCheck(username, password)) {
                 directMainPage = false;
                 Error error = new Error("Wrong username/password");

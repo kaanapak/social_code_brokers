@@ -139,7 +139,7 @@ System.out.println("k "+username);
     public ArrayList<String> getStarredRepoList(String username){
         ArrayList<String> RepoList=new ArrayList<>();
         List<Map<String, Object>> response = conn.queryForList(
-                "SELECT repo_id FROM follow where username = ?", new Object[]{username}
+                "SELECT repo_id FROM repo where username = ?", new Object[]{username}
         );
         for(int i = 0; i < response.size(); i++){
             RepoList.add(String.valueOf(response.get(i).get("repo_id")));
