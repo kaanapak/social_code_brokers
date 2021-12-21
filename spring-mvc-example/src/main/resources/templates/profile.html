@@ -13,8 +13,25 @@
     };
     username=[[${user.getUsername()}]]
     score=[[${user.getScore()}]]
-    repoList=[[${user.toStringRepoList()}]]
+    repoList=splitByPunctuations([[${user.toStringRepoList()}]])
+    console.log(repoList)
     GitUsername=[[${user.getGitHubUsername()}]]
+    function gengrid()
+    {
+      var i,x
+      for(i=0;i<repoList.length;i++)
+      {
+        x=x+"<p>repo: "+repoList[i][3]+"  repo id: "+repoList[i][2]+"</p>"
+        x=x+"<p>language: "+repoList[i][1]+"  date: "+repoList[i][0]+"</p>"
+
+        x=x+"<p>------------------------------------------------------------------</p>"
+      }
+      document.getElementById("demo").innerHTML = x;
+    }
+    window.onload = function () {
+      gengrid();
+    }
+
   </script>
   <title>My Profile</title>
   <link rel="stylesheet" href="./../static/css/mainPage.css">
@@ -38,7 +55,9 @@
             <input type="submit" value="Starred Projects">
           </form>
           <li><button id="invite">Invite User</button></li>
-          <li style="float: right"><a>Welcome <script>document.write(username)</script></a></li>
+          <p> Welcome <script>document.write(username)</script></p>
+          <p> Your github username is <script>document.write(GitUsername)</script></a></p>
+          <p> Your score  is <script>document.write(score)</script></a></p>
         </ul>
         </ul>
       </div>
@@ -50,18 +69,9 @@
         </div>
       <div class="profileContainer">
         <div class="profilePicture">
-        </div>
-        <br></br>
-        <h1 display: inline block> USERNAME - SCORE</h1>  <button type="submit" class= "profileButton">Change password</button>
-      </div>
+
         <div class="projectContainer">
-          <span>dfjdfjdfjdfj</span>
-          <text>dfjdfjdfjdfj</text>
-          <text>dfjdfjdfjdfj</text>
-          <text>dfjdfjdfjdfj</text>
-          <h1>Proejcts go here</h1>
-          <h1>Proejcts go here</h1>
-          <h1>Proejcts go here</h1>
+          <div id="demo"></div>
         </div>
       </div>
     </div>

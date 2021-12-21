@@ -33,6 +33,30 @@
             });
             return starred_list
         }
+
+        function gengrid()
+        {
+            var i,x
+            for(i=0;i<starred_list.length;i++)
+            {
+                x=x+"<p>repo: "+starred_list[i][3]+"  repo id: "+starred_list[i][2]+"</p>"
+                x=x+"<p>language: "+starred_list[i][1]+"  date: "+starred_list[i][0]+"</p>"
+                 x=x+"<form method=post action=/mainPage >"
+                x=x+"<input type='hidden' name='username' value="+username+" >"
+
+                    x=x+"<input type='hidden' name='IsRemoveStar' value='1' >"
+                    x=x+"<input type='hidden' name='StarredId' value="+starred_list[i][2]+" >"
+                    x=x+"<input type=submit value='Remove Star'>"
+
+
+                x=x+"</form>"
+                x=x+"<p>------------------------------------------------------------------</p>"
+            }
+            document.getElementById("demo").innerHTML = x;
+        }
+        window.onload = function () {
+            gengrid();
+        }
     </script>
     <link rel="stylesheet" href="./../static/css/mainPage.css" />
 </head>

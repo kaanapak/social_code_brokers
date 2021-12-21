@@ -18,12 +18,33 @@
           followingReposList=splitByPunctuations([[${user.toStringFollowingRepos()}]]);
           console.log(followingReposList,"followingrepos")
           container = document.getElementById("projectContainer");
-          followingReposList.map( repo =>
-              repo.map( item => {
-                  container.innerHTML += '<div class="items" >fdjfj</div>';
-                  console.log(container,item);
-              } )
-          )
+          function gengrid()
+          {
+              var i,x
+              for(i=0;i<followingReposList.length;i++)
+              {
+                  x=x+"<p>username: "+followingReposList[i][5]+"  repo: "+followingReposList[i][3]+"  repo id: "+followingReposList[i][2]+"</p>"
+                  x=x+"<p>language: "+followingReposList[i][1]+"  date: "+followingReposList[i][0]+"</p>"
+                  x=x+"<form method=post action=/mainPage >"
+                  x=x+"<input type='hidden' name='username' value="+username+" >"
+                  if(followingReposList[i][4].localeCompare("0")==0){
+                      x=x+"<input type='hidden' name='IsAddStar' value='1' >"
+                      x=x+"<input type='hidden' name='StarredId' value="+followingReposList[i][2]+" >"
+                      x=x+"<input type=submit value='Star this Repo'>"
+                  }else{
+                      x=x+"<input type='hidden' name='IsRemoveStar' value='1' >"
+                      x=x+"<input type='hidden' name='StarredId' value="+followingReposList[i][2]+" >"
+                      x=x+"<input type=submit value='Remove Star'>"
+                  }
+
+                     x=x+"</form>"
+                  x=x+"<p>------------------------------------------------------------------</p>"
+              }
+              document.getElementById("demo").innerHTML = x;
+          }
+          window.onload = function () {
+              gengrid();
+          }
       </script>
     <title>Social CodeBrokers</title>
     <link rel="stylesheet" href="./../static/css/mainPage.css" />
@@ -40,6 +61,10 @@
             <input type='hidden' name='username' th:value="${user.getUsername()}" >
             <input type="submit" value="Following Users">
         </form>
+        <form method="post" action="/profile" >
+            <input type='hidden' name='username' th:value="${user.getUsername()}" >
+            <input type="submit" value="Profile">
+        </form>
         <form method="post" action="/starredProjects">
             <input type='hidden' name='username' th:value="${user.getUsername()}" >
             <input type="submit" value="Starred Projects">
@@ -53,9 +78,8 @@
        <input type="text" class="searchTerm" placeholder="Search user">
        <button type="submit" class="searchButton">Submit</button>
     </div>
-    <div id="projectContainer">
-        <div>dkdkdsk</div>
-    </div>
+      <div id="demo"></div>
+
  </div>
 </div>
 </body>

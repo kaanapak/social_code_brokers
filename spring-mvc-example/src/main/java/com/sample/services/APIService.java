@@ -34,8 +34,14 @@ public class APIService {
     //Is there a github account with that username
 
     public Boolean isGithub(String GitUsername) throws IOException, InterruptedException {
-        String url = "https://api.github.com/users/" + GitUsername;
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        String url = "https://api.github.com/users/" + GitUsername+"/?access_token=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";
+       // HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create( "https://api.github.com/users/" + GitUsername))
+                .GET()
+                .header("Authorization","Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
@@ -52,8 +58,15 @@ public class APIService {
     public  ArrayList<Repository> RepoList(String GitUsername) throws IOException, InterruptedException, JSONException {
 
         ArrayList<Repository>RepoList=new ArrayList<>();
-        String url = "https://api.github.com/users/"+GitUsername+"/repos";
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        String url = "https://api.github.com/users/"+GitUsername+"/repos/?access_token=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\";";
+
+        //HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.github.com/users/"+GitUsername+"/repos"))
+                .GET()
+                .header("Authorization","Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         ArrayList<String> listdata = new ArrayList<String>();
@@ -91,18 +104,31 @@ public class APIService {
 
     //number of followers at GitHub
     public Integer FollowerNumber(String GitUsername) throws IOException, InterruptedException {
-        String url = "https://api.github.com/users/" + GitUsername;
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        String url = "https://api.github.com/users/" + GitUsername+"/?access_token=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";;
+      //  HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+       HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.github.com/users/" + GitUsername))
+                .GET()
+                .header("Authorization", "Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
+
         Integer followers= (Integer) response_map.get("followers");
         return followers;
     }
 
     public  Integer CodeCount(String GitUsername) throws IOException, InterruptedException {
-        String url = "https://api.github.com/users/"+GitUsername;
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        String url = "https://api.github.com/users/"+GitUsername+"/?access_token=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";;
+        //HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.github.com/users/" + GitUsername))
+                .GET()
+                .header("Authorization", "Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
@@ -111,8 +137,14 @@ public class APIService {
     }
 
     public Integer LanguageCount(String GitUsername) throws JSONException, IOException, InterruptedException {
-        String url = "https://api.github.com/users/" + GitUsername + "/repos";
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        String url = "https://api.github.com/users/" + GitUsername + "/repos"+"/?access_token=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";;
+     // HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+      HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create( "https://api.github.com/users/" + GitUsername + "/repos"))
+                .GET()
+                .header("Authorization", "Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         JSONArray jsonArr = new JSONArray(response.body());
@@ -145,8 +177,15 @@ public class APIService {
 
     //Find repository information from ID
     public   Repository getRepository(String RepositoryId) throws IOException, InterruptedException {
-        String url = "https://api.github.com/repositories/"+RepositoryId;
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+        String url = "https://api.github.com/repositories/"+RepositoryId+"/?access_token=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";;
+        //HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.github.com/repositories/"+RepositoryId))
+                .GET()
+                .header("Authorization", "Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map = new ObjectMapper().readValue(response.body(), HashMap.class);
@@ -167,7 +206,13 @@ public class APIService {
 
     public static ArrayList<String> getLanguage(String url) throws IOException, InterruptedException {
 
-        HttpRequest request2 = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+       // HttpRequest request2 = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+       HttpRequest request2 = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .GET()
+                .header("Authorization", "Bearer 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")
+                .header("Content-Type", "application/json")
+                .build();
         HttpClient client2 = HttpClient.newBuilder().build();
         HttpResponse<String> response2 = client2.send(request2, HttpResponse.BodyHandlers.ofString());
         Map<String, Object> response_map2 = new ObjectMapper().readValue(response2.body(), HashMap.class);

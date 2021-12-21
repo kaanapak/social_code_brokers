@@ -22,12 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Change at date-time&#10;Small change at html">
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Small change at html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/configuration/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/configuration/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,8 +162,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.signUp.html" />
         <item itemvalue="Application.APIService" />
+        <item itemvalue="JavaScript Debug.signUp.html" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +182,7 @@
       <workItem from="1639313286077" duration="25742000" />
       <workItem from="1639641451298" duration="10027000" />
       <workItem from="1639927546754" duration="10262000" />
-      <workItem from="1639999218488" duration="13636000" />
+      <workItem from="1639999218488" duration="23773000" />
     </task>
     <task id="LOCAL-00001" summary="Created services and started controllers">
       <created>1638995600826</created>
@@ -267,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640012729648</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Small change at html">
+      <created>1640033626489</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1640033626489</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +303,8 @@
     <MESSAGE value="server problem solved" />
     <MESSAGE value="Important change&#10;Controller errors solved&#10;HTML connection done" />
     <MESSAGE value="Change at date-time&#10;Small change at html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change at date-time&#10;Small change at html" />
+    <MESSAGE value="Small change at html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small change at html" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="182" key="#SQL_Dialects" timestamp="1639949673465">
@@ -310,38 +319,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="389" y="103" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1639928244671" />
-    <state width="941" height="198" key="GridCell.Tab.0.bottom" timestamp="1640029805316">
+    <state width="940" height="164" key="GridCell.Tab.0.bottom" timestamp="1640087779104">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640029805316" />
-    <state width="941" height="198" key="GridCell.Tab.0.center" timestamp="1640029805314">
+    <state width="940" height="164" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
+    <state width="940" height="164" key="GridCell.Tab.0.center" timestamp="1640087779104">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640029805314" />
-    <state width="941" height="198" key="GridCell.Tab.0.left" timestamp="1640029805314">
+    <state width="940" height="164" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
+    <state width="940" height="164" key="GridCell.Tab.0.left" timestamp="1640087779104">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640029805314" />
-    <state width="941" height="198" key="GridCell.Tab.0.right" timestamp="1640029805316">
+    <state width="940" height="164" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
+    <state width="940" height="164" key="GridCell.Tab.0.right" timestamp="1640087779104">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640029805316" />
-    <state width="941" height="198" key="GridCell.Tab.1.bottom" timestamp="1640029805317">
+    <state width="940" height="164" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
+    <state width="940" height="164" key="GridCell.Tab.1.bottom" timestamp="1640087779105">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640029805317" />
-    <state width="941" height="198" key="GridCell.Tab.1.center" timestamp="1640029805317">
+    <state width="940" height="164" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640087779105" />
+    <state width="940" height="164" key="GridCell.Tab.1.center" timestamp="1640087779105">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640029805317" />
-    <state width="941" height="198" key="GridCell.Tab.1.left" timestamp="1640029805317">
+    <state width="940" height="164" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640087779105" />
+    <state width="940" height="164" key="GridCell.Tab.1.left" timestamp="1640087779104">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640029805317" />
-    <state width="941" height="198" key="GridCell.Tab.1.right" timestamp="1640029805317">
+    <state width="940" height="164" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
+    <state width="940" height="164" key="GridCell.Tab.1.right" timestamp="1640087779105">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="941" height="198" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640029805317" />
+    <state width="940" height="164" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640087779105" />
     <state width="1010" height="204" key="GridCell.Tab.2.bottom" timestamp="1639998732328">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -366,14 +375,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1640011779141" />
-    <state x="-301" y="0" key="SettingsEditor" timestamp="1639928438045">
+    <state x="121" y="0" key="SettingsEditor" timestamp="1640078468775">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="-301" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1639928438045" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640012773700">
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1640078468775" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640033631828">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640012773700" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640033631828" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640078495776">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1640078495776" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1639948472666">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
