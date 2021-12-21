@@ -39,11 +39,20 @@
   <div>
   <div class="navbar">
     <ul>
-      <li><a href="/mainPage">Home</a></li>
-      <li><a href="/followings">Following Users</a></li>
-      <li><a href="/starredRepos">Stared Repos</a></li>
-      <li><buttton id="invite">Invite User</buttton></li>
-      <li style="float: right"><a>Welcome ....</a></li>
+      <form method="post" action="/mainPage" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input type="submit" value="Home">
+      </form>
+      <form method="post" action="/followings" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input type="submit" value="Following Users">
+      </form>
+      <form method="post" action="/starredProjects">
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input type="submit" value="Starred Projects">
+      </form>
+      <li><button id="invite">Invite User</button></li>
+      <li style="float: right"><a>Welcome <script>document.write(username)</script></a></li>
     </ul>
   </div>
   <div class="wrap">

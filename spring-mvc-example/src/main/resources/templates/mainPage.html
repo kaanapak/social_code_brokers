@@ -16,7 +16,14 @@
           userList=[[${system.toStringUsers()}]].split(',');
           console.log(userList)
           followingReposList=splitByPunctuations([[${user.toStringFollowingRepos()}]]);
-          console.log(followingReposList)
+          console.log(followingReposList,"followingrepos")
+          container = document.getElementById("projectContainer");
+          followingReposList.map( repo =>
+              repo.map( item => {
+                  container.innerHTML += '<div class="items" >fdjfj</div>';
+                  console.log(container,item);
+              } )
+          )
       </script>
     <title>Social CodeBrokers</title>
     <link rel="stylesheet" href="./../static/css/mainPage.css" />
@@ -25,7 +32,10 @@
   <div>
   <div class="navbar">
     <ul>
-      <li><a href="/mainPage">Home</a></li>
+        <form method="post" action="/mainPage" >
+            <input type='hidden' name='username' th:value="${user.getUsername()}" >
+            <input type="submit" value="Home">
+        </form>
         <form method="post" action="/followings" >
             <input type='hidden' name='username' th:value="${user.getUsername()}" >
             <input type="submit" value="Following Users">
@@ -35,7 +45,7 @@
             <input type="submit" value="Starred Projects">
         </form>
       <li><button id="invite">Invite User</button></li>
-      <li style="float: right"><a>Welcome ....</a></li>
+      <li style="float: right"><a>Welcome <script>document.write(username)</script></a></li>
     </ul>
   </div>
   <div class="wrap">
@@ -43,15 +53,8 @@
        <input type="text" class="searchTerm" placeholder="Search user">
        <button type="submit" class="searchButton">Submit</button>
     </div>
-    <div class="projectContainer">
-        <span>dfjdfjdfjdfj</span>
-        <text>dfjdfjdfjdfj</text>
-        <text>dfjdfjdfjdfj</text>
-        <text>dfjdfjdfjdfj</text>
-        <h1>Proejcts go here</h1>
-        <h1>Proejcts go here</h1>
-        <h1>Proejcts go here</h1>
-
+    <div id="projectContainer">
+        <div>dkdkdsk</div>
     </div>
  </div>
 </div>
