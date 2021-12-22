@@ -113,6 +113,10 @@ form {
       float: center;
       width: 40%;
       }
-    
+
+    .info {
+      border: #333333;
+      background: #cccccc;
+    }
 
 

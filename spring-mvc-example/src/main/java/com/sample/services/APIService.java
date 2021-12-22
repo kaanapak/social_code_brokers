@@ -39,7 +39,7 @@ public class APIService {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create( "https://api.github.com/users/" + GitUsername))
                 .GET()
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client = HttpClient.newBuilder().build();
@@ -64,12 +64,13 @@ public class APIService {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.github.com/users/"+GitUsername+"/repos"))
                 .GET()
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         ArrayList<String> listdata = new ArrayList<String>();
+        System.out.println(response.body());
         JSONArray jsonArr = new JSONArray(response.body());
         for (int i = 0; i < jsonArr.length(); i++)
         {
@@ -109,7 +110,7 @@ public class APIService {
        HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.github.com/users/" + GitUsername))
                 .GET()
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client = HttpClient.newBuilder().build();
@@ -126,7 +127,7 @@ public class APIService {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.github.com/users/" + GitUsername))
                 .GET()
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client = HttpClient.newBuilder().build();
@@ -142,7 +143,7 @@ public class APIService {
       HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create( "https://api.github.com/users/" + GitUsername + "/repos"))
                 .GET()
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client = HttpClient.newBuilder().build();
@@ -183,7 +184,7 @@ public class APIService {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.github.com/repositories/"+RepositoryId))
                 .GET()
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client = HttpClient.newBuilder().build();
@@ -210,7 +211,7 @@ public class APIService {
        HttpRequest request2 = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .GET()
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .header("Content-Type", "application/json")
                 .build();
         HttpClient client2 = HttpClient.newBuilder().build();

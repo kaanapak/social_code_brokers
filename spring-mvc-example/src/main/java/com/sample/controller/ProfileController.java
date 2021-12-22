@@ -77,7 +77,7 @@ public class ProfileController {
         }
         searchedUser.setGitHubUsername(serverService.getGitUsername(searchedUsername));
         searchedUser.setRepoList(RepoList);
-        model.addAttribute("searchedUser",user);
+        model.addAttribute("searchedUser",searchedUser);
 
         return "searchedUser";
     }

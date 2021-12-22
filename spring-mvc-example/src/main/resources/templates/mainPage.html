@@ -17,13 +17,12 @@
           console.log(userList)
           followingReposList=splitByPunctuations([[${user.toStringFollowingRepos()}]]);
           console.log(followingReposList,"followingrepos")
-          container = document.getElementById("projectContainer");
           function gengrid()
           {
               var i,x
               for(i=0;i<followingReposList.length;i++)
               {
-                  x=x+"<p>username: "+followingReposList[i][5]+"  repo: "+followingReposList[i][3]+"  repo id: "+followingReposList[i][2]+"</p>"
+                  x=x+"<div style='background: #9DBFAF' class='info'><p>username: "+followingReposList[i][5]+"  repo: "+followingReposList[i][3]+"  repo id: "+followingReposList[i][2]+"</p>"
                   x=x+"<p>language: "+followingReposList[i][1]+"  date: "+followingReposList[i][0]+"</p>"
                   x=x+"<form method=post action=/mainPage >"
                   x=x+"<input type='hidden' name='username' value="+username+" >"
@@ -37,10 +36,23 @@
                       x=x+"<input type=submit value='Remove Star'>"
                   }
 
-                     x=x+"</form>"
+                     x=x+"</form></div>"
                   x=x+"<p>------------------------------------------------------------------</p>"
               }
               document.getElementById("demo").innerHTML = x;
+          }
+          function myFunction(val) {
+              var div;
+              let filtered = userList.filter(item => item.includes(val))
+              for(let i=0;i<filtered.length;i++)  {
+                  console.log("filtered[i]",filtered[i]);
+                  div = div +" <form method=\"post\" action=\"/searchedUser\">"
+                  div = div +"<input type='hidden' name='username' th:value=\"${user.getUsername()}\" >"
+                  div = div +"<input type='hidden' name='searchedUsername' value='" + filtered[i] +"'>"
+                  div = div +"<button>" + filtered[i] + "</button>"
+                  div = div + "</form>"
+              }
+              document.getElementById("search-results").innerHTML = div;
           }
           window.onload = function () {
               gengrid();
@@ -75,8 +87,11 @@
   </div>
   <div class="wrap">
     <div class="search">
-       <input type="text" class="searchTerm" placeholder="Search user">
-       <button type="submit" class="searchButton">Submit</button>
+
+        <input type="text" class="searchedUsername" onchange="myFunction(this.value)" placeholder="Search user">
+        <input type="submit" value="Search">
+
+        <div id="search-results"></div>
     </div>
       <div id="demo"></div>
 

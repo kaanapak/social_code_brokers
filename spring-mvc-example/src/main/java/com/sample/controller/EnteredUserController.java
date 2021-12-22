@@ -42,7 +42,7 @@ public class EnteredUserController {
         String returnpage = "";
 
         if (!Objects.isNull(IsSıngIn)) {
-          // serverService.addfollowing("emaden99github","umut");
+           //serverService.addfollowing("emaden99github","oguzhangithub");
             if (!serverService.PasswordCheck(username, password)) {
                 directMainPage = false;
                 Error error = new Error("Wrong username/password");

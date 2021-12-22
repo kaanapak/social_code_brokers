@@ -15,9 +15,49 @@
     username=[[${user.getUsername()}]]
     usernameSearched=[[${ searchedUser.getUsername()}]]
     scoreSearched=[[${ searchedUser.getScore()}]]
-    repoListSearched=[[${ searchedUser.toStringRepoList()}]]
-    isFollowing=[[${ searchedUser.getIsFollowing()()}]]
+    repoListSearched=splitByPunctuations([[${ searchedUser.toStringRepoList()}]])
+    isFollowing=[[${ searchedUser.getIsFollowing()}]]
     GitUsernameSearched=[[${searchedUser.getGitHubUsername()}]]
+    function gengrid()
+    {
+      var i,x
+      for(i=0;i<repoListSearched.length;i++)
+      {
+        x=x+"<p>repo: "+repoListSearched[i][3]+"  repo id: "+repoListSearched[i][2]+"</p>"
+        x=x+"<p>language: "+repoListSearched[i][1]+"  date: "+repoListSearched[i][0]+"</p>"
+        x=x+"<form method=post action=/mainPage >"
+        x=x+"<input type='hidden' name='username' value="+username+" >"
+        x=x+"<input type='hidden' name='searchedUsername' value="+usernameSearched+" >"
+        if(repoListSearched[i][4].localeCompare("0")==0){
+          x=x+"<input type='hidden' name='IsAddStar' value='1' >"
+          x=x+"<input type='hidden' name='StarredId' value="+repoListSearched[i][2]+" >"
+          x=x+"<input type=submit value='Star this Repo'>"
+        }else{
+          x=x+"<input type='hidden' name='IsRemoveStar' value='1' >"
+          x=x+"<input type='hidden' name='StarredId' value="+repoListSearched[i][2]+" >"
+          x=x+"<input type=submit value='Remove Star'>"
+        }
+        x=x+"</form></div>"
+        x=x+"<br>"
+      }
+      x=x+"<form method=post action=/searchedUser >"
+      x=x+"<input type='hidden' name='username' value="+username+" >"
+      x=x+"<input type='hidden' name='searchedUsername' value="+usernameSearched+" >"
+     if(isFollowing.localeCompare("0")==0) {
+        x=x+"<input type='hidden' name='IsFollow' value=1>"
+       x=x+"<input type=submit value='Follow'>"
+     }
+     else {
+       x=x+"<input type='hidden' name='IsUnFollow' value=1>"
+       x=x+"<input type=submit value='Unfollow'>"
+     }
+      x = x+ "</form>"
+      document.getElementById("demo").innerHTML = x;
+    }
+    window.onload = function () {
+      gengrid();
+    }
+
   </script>
   <title>Username's Page</title>
   <link rel="stylesheet" href="./../static/css/mainPage.css">
@@ -55,18 +95,9 @@
           <br>
           <h1> USERNAME - SCORE</h1>
           <br>
-          <button type="submit" onclick="" class = "profileButton">Unfollow</button>
-          <button type="submit" onclick="" class= "profileButton">Follow</button>
         </div>
         <div class="projectContainer">
-          <span>dfjdfjdfjdfj</span>
-          <text>dfjdfjdfjdfj</text>
-          <text>dfjdfjdfjdfj</text>
-          <text>dfjdfjdfjdfj</text>
-          <h1>Proejcts go here</h1>
-          <h1>Proejcts go here</h1>
-          <h1>Proejcts go here</h1>
-        </div>
+          <div id="demo"></div>
       </div>
     </div>
     </div>

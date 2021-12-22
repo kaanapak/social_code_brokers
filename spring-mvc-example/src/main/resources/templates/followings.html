@@ -15,22 +15,28 @@
       following_list=splitByPunctuations([[${user.toStringFollowingUsers()}]]);
 
       function sortAlphabetically() {
-        starred_list.sort((a, b) => {
+        following_list.sort((a, b) => {
           return a.item - b.item;
         });
-        return starred_list
+        return following_list
       }
       function sortLastAdded() {
-        starred_list.sort((a, b) => {
+        following_list.sort((a, b) => {
           return a.time - b.time;
         });
-        return starred_list
+        return following_list
       }
       function sortScore() {
-        starred_list.sort((a, b) => {
+        following_list.sort((a, b) => {
           return a.score - b.score;
         });
-        return starred_list
+        return following_list
+      }
+      function listFollowings() {
+        var list ;
+        for(int i=0;i<following_list.length;i++) {
+
+        }
       }
     </script>
     <link rel="stylesheet" href="./../static/css/mainPage.css" />

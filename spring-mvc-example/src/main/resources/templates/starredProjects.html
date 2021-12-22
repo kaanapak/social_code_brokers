@@ -41,7 +41,7 @@
             {
                 x=x+"<p>repo: "+starred_list[i][3]+"  repo id: "+starred_list[i][2]+"</p>"
                 x=x+"<p>language: "+starred_list[i][1]+"  date: "+starred_list[i][0]+"</p>"
-                 x=x+"<form method=post action=/mainPage >"
+                 x=x+"<form method=post action=/starredProjects >"
                 x=x+"<input type='hidden' name='username' value="+username+" >"
 
                     x=x+"<input type='hidden' name='IsRemoveStar' value='1' >"
@@ -92,7 +92,7 @@
                 <button type="submit" onclick="sortScore()" class="filterButton">Score</button>
             </div>
             <div class="projectContainer">
-                <script>starred_list.map(item => <span>${item}</span>)</script>
+                <div id="demo"></div>
             </div>
         </div>
     </div>

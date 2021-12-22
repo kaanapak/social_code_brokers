@@ -205,3 +205,8 @@ ul {
   color: white !important;
 }
 
+.info {
+  border: #333333;
+  background: #cccccc;
+}
+
