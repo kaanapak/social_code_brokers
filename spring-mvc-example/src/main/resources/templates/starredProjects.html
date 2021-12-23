@@ -13,90 +13,114 @@
             };
             return res;
         };
+        userList=[[${system.toStringUsers()}]].split(',');
         username=[[${user.getUsername()}]]
+        console.log(username)
+        console.log([[${user.toStringStarredRepos()}]])
         starred_list=splitByPunctuations([[${user.toStringStarredRepos()}]]);
-        function sortAlphabetically() {
-            starred_list.sort((a, b) => {
-                return a.item - b.item;
+        console.log(starred_list)
+        length=starred_list.length
+        console.log("uzunkuk "+starred_list.length)
+
+        function sortAlpha() {
+            starred_list.sort(function (a, b) {
+                if(a[3] < b[3]) { return -1; }
+                if(a[3] > b[3]) { return 1; }
+                return 0;
             });
-            return starred_list
-        }
-        function sortLastAdded() {
-             starred_list.sort((a, b) => {
-                return a.time - b.time;
-            });
-            return starred_list
-        }
-        function sortScore() {
-            starred_list.sort((a, b) => {
-                return a.score - b.score;
-            });
-            return starred_list
+            gengrid()
         }
 
-        function gengrid()
-        {
-            var i,x
-            if(starred_list.length==1){
-            for(i=0;i<starred_list.length;i++)
-            {
-                x=x+"<p>repo: "+starred_list[i][3]+"  repo id: "+starred_list[i][2]+"</p>"
-                x=x+"<p>language: "+starred_list[i][1]+"  date: "+starred_list[i][0]+"</p>"
-                 x=x+"<form method=post action=/starredProjects >"
-                x=x+"<input type='hidden' name='username' value="+username+" >"
+        function sortDate() {
+            starred_list.sort(function (a, b) {
+                return new Date(b[0]) - new Date(a[0]);
+            });
+            gengrid()
+        }
 
-                    x=x+"<input type='hidden' name='IsRemoveStar' value='1' >"
-                    x=x+"<input type='hidden' name='StarredId' value="+starred_list[i][2]+" >"
-                    x=x+"<input type=submit value='Remove Star'>"
-                x=x+"</form>"
-                x=x+"<p>------------------------------------------------------------------</p>"
-            }}
+        function gengrid() {
+            var i
+            var x = " "
+
+            for (i = 0; i < length; i++) {
+
+
+                    x = x + "<div style='background: #9DBFAF' ><p>repo: " + starred_list[i][3] + "  repo id: " + starred_list[i][2] + "</p>"
+                    x = x + "<p>language: " + starred_list[i][1] + "  date: " + starred_list[i][0] + "</p>"
+                    x = x + "<form method=post action=/starredProjects >"
+                    x = x + "<input type='hidden' name='username' value=" + username + " >"
+
+                    x = x + "<input type='hidden' name='IsRemoveStar' value='1' >"
+                    x = x + "<input type='hidden' name='StarredId' value=" + starred_list[i][2] + " >"
+                    x = x + "<input type=submit value='Remove Star'>"
+                    x = x + "</form></div>"
+                }
+
             document.getElementById("demo").innerHTML = x;
         }
         window.onload = function () {
             gengrid();
         }
+        function myFunction(val) {
+            var div=" ";
+            let filtered = userList.filter(item => item.includes(val))
+            for(let i=0;i<filtered.length;i++)  {
+                console.log("filtered[i]",filtered[i]);
+                div = div +" <form method=\"post\" action=\"/searchedUser\">"
+                div = div +"<input type='hidden' name='username' value="+username+" >"
+                div = div +"<input type='hidden' name='searchedUsername' value='" + filtered[i] +"'>"
+                div = div +"<input style=\"display: block;\"  type=\"submit\" value=" + filtered[i] + ">"
+                div = div + "</form>"
+            }
+            document.getElementById("search-results").innerHTML = div;
+        }
+        function logoutFunction() {
+            localStorage.clear();
+        }
     </script>
     <link rel="stylesheet" href="./../static/css/mainPage.css" />
+    <link rel="stylesheet" th:href="@{/css/mainPage.css}" />
 </head>
 
 <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
-    <div>
-        <div style="margin: 5px" class="navbar">
-            <ul style="list-style-type: none; top:0; margin: 0;padding: 0;overflow: hidden">
-                <li style="float: left;"><form method="post" action="/mainPage" >
-                    <input type='hidden' name='username' th:value="${user.getUsername()}" >
-                    <input style="display: block;" type="submit" value="Home">
-                </form></li>
-                <li style="float: left;"><form method="post" action="/followings" >
-                    <input type='hidden' name='username' th:value="${user.getUsername()}" >
-                    <input style="display: block;" type="submit" value="Following Users">
-                </form></li>
-                <li style="float: left;"><form method="post" action="/profile" >
-                    <input type='hidden' name='username' th:value="${user.getUsername()}" >
-                    <input style="display: block;" type="submit" value="Profile">
-                </form></li>
-                <li style="float: left;"><form method="post" action="/starredProjects">
-                    <input type='hidden' name='username' th:value="${user.getUsername()}" >
-                    <input style="display: block;" type="submit" value="Starred Projects">
-                </form></li>
-                <li style="float: left;"><button style="display: block;" id="invite">Invite User</button></li>
-                <li style="float: right"><a style="display: block;">Welcome <script>document.write(username)</script></a></li>
-            </ul>
+<div>
+    <div style="margin: 5px" class="navbar">
+        <ul style="list-style-type: none; top:0; margin: 0;padding: 0;overflow: hidden">
+            <li style="float: left;"><form method="post" class="headButton" action="/mainPage" >
+                <input type='hidden' name='username' th:value="${user.getUsername()}" >
+                <input style="display: block;"  type="submit" value="Home">
+            </form></li>
+            <li style="float: left;"><form method="post" class="headButton" action="/followings" >
+                <input type='hidden' name='username' th:value="${user.getUsername()}" >
+                <input style="display: block;"  type="submit" value="Following Users">
+            </form></li>
+            <li style="float: left;"><form method="post" class="headButton" action="/profile" >
+                <input type='hidden' name='username' th:value="${user.getUsername()}" >
+                <input style="display: block;"  type="submit" value="Profile">
+            </form></li>
+            <li style="float: left;"> <form method="post" class="headButton" action="/starredProjects">
+                <input type='hidden' name='username' th:value="${user.getUsername()}" >
+                <input style="display: block;"  type="submit" value="Starred Projects">
+            </form></li>
+
+
+            <li style="float: right"><a style="display: block;"><script>document.write(username)</script></a></li>
+                <li style="float: right"><form method="post" action="/index">
+                <input type="submit" value="Log out" onclick="logoutFunction()">
+            </form>  </li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="search">
+
+            <input type="text" class="searchTerm" onchange="myFunction(this.value)" placeholder="Search user">
+            <input    class="searchButton" value="Search">
+            <div id="search-results"></div>
         </div>
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="Search user">
-                <button onclick="" type="submit" class="searchButton">Search User</button>
-            </div>
-            <div class="filterContainer">
-                <h3>Filters:</h3>
-                <button type="submit" onclick="sortAlphabetically()" class="filterButton">Alphabetically</button>
-                <button type="submit" onclick="sortLastAdded()" class="filterButton">Last Added</button>
-                <button type="submit" onclick="sortScore()" class="filterButton">Score</button>
-            </div>
-            <div class="projectContainer">
-                <div id="demo"></div>
-            </div>
+        <button type="submit" onclick="sortAlpha()" class="filterButton">Alphabetically</button>
+        <button type="submit" onclick="sortDate()" class="filterButton">Date</button>
+        <div class="projectContainer">
+            <div id="demo">  </div>
         </div>
     </div>
 </body>

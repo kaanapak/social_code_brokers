@@ -3,6 +3,7 @@
   <head>
     <title>Followed Users</title>
     <script th:inline="javascript">
+
       const splitByPunctuations = (str = '') => {
         let res = [];
         res = str.split('*');
@@ -11,76 +12,117 @@
         };
         return res;
       };
+      userList=[[${system.toStringUsers()}]].split(',');
      username=[[${user.getUsername()}]]
       following_list=splitByPunctuations([[${user.toStringFollowingUsers()}]]);
+      console.log(following_list)
 
-      function sortAlphabetically() {
-        following_list.sort((a, b) => {
-          return a.item - b.item;
-        });
-        return following_list
-      }
-      function sortLastAdded() {
-        following_list.sort((a, b) => {
-          return a.time - b.time;
-        });
-        return following_list
-      }
       function sortScore() {
-        following_list.sort((a, b) => {
-          return a.score - b.score;
+        following_list.sort(function (a, b) {
+          return b[2] - a[2]
         });
-        return following_list
+        gengrid()
       }
-      function listFollowings() {
-        var list ;
-        for(int i=0;i<following_list.length;i++) {
 
+      function sortAlpha() {
+        following_list.sort(function (a, b) {
+          if(a[0] < b[0]) { return -1; }
+          if(a[0] > b[0]) { return 1; }
+          return 0;
+        });
+        gengrid()
+      }
+
+      function gengrid()
+      {
+        var i
+        var x=" "
+
+
+          for (i = 0; i < following_list.length; i++) {
+            x = x + "<div style='background: #9DBFAF' ><p>username: " + following_list[i][0] + "  Github Username: " + following_list[i][1] + "</p>"
+            x = x + "<p>score: " + following_list[i][2] + "</p> "
+            x = x + "<form method=post action=/followings >"
+            x = x + "<input type='hidden' name='username' value=" + username + " >"
+            x = x + "<input type='hidden' name='UnfollowUser' value=" + following_list[i][0] + " >"
+            x = x + "<input type='hidden' name='IsUnfollow' value='1' >"
+            x = x + "<input style=\"display: block;\"type=submit value='Unfollow'>"
+            x = x + "</form></div>"
+
+          }
+
+          document.getElementById("demo").innerHTML = x;
+
+      }
+      window.onload = function () {
+        gengrid();
+      }
+
+      function myFunction(val) {
+        var div = " ";
+        let filtered = userList.filter(item => item.includes(val))
+        for (let i = 0; i < filtered.length; i++) {
+          console.log("filtered[i]", filtered[i]);
+          div = div + " <form method=\"post\" action=\"/searchedUser\">"
+          div = div + "<input type='hidden' name='username' value=" + username + " >"
+          div = div + "<input type='hidden' name='searchedUsername' value='" + filtered[i] + "'>"
+          div = div + "<input style=\"display: block;\"  type=\"submit\" value=" + filtered[i] + ">"
+          div = div + "</form>"
         }
+        document.getElementById("search-results").innerHTML = div;
+
+      }
+      function logoutFunction() {
+        localStorage.clear();
       }
     </script>
-    <link rel="stylesheet" href="./../static/css/mainPage.css" />
+
   </head>
+  <link rel="stylesheet" th:href="@{/css/mainPage.css}" />
   <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
   <div>
-  <div class="navbar">
-    <ul>
-      <form method="post" action="/mainPage" >
-        <input type='hidden' name='username' th:value="${user.getUsername()}" >
-        <input type="submit" value="Home">
-      </form>
-      <form method="post" action="/followings" >
-        <input type='hidden' name='username' th:value="${user.getUsername()}" >
-        <input type="submit" value="Following Users">
-      </form>
-      <form method="post" action="/starredProjects">
-        <input type='hidden' name='username' th:value="${user.getUsername()}" >
-        <input type="submit" value="Starred Projects">
-      </form>
-      <li><button id="invite">Invite User</button></li>
-      <li style="float: right"><a>Welcome <script>document.write(username)</script></a></li>
-    </ul>
-  </div>
-  <div class="wrap">
-    <div class="search">
-       <input type="text" class="searchTerm" placeholder="Search user">
-       <button type="submit" class="searchButton">Submit</button>
+    <div style="margin: 5px" class="navbar">
+      <ul style="list-style-type: none; top:0; margin: 0;padding: 0;overflow: hidden">
+        <li style="float: left;"><form method="post" class="headButton" action="/mainPage" >
+          <input type='hidden' name='username' th:value="${user.getUsername()}" >
+          <input style="display: block;"  type="submit" value="Home">
+        </form></li>
+        <li style="float: left;"><form method="post" class="headButton" action="/followings" >
+          <input type='hidden' name='username' th:value="${user.getUsername()}" >
+          <input style="display: block;"  type="submit" value="Following Users">
+        </form></li>
+        <li style="float: left;"><form method="post" class="headButton" action="/profile" >
+          <input type='hidden' name='username' th:value="${user.getUsername()}" >
+          <input style="display: block;"  type="submit" value="Profile">
+        </form></li>
+        <li style="float: left;"> <form method="post" class="headButton" action="/starredProjects">
+          <input type='hidden' name='username' th:value="${user.getUsername()}" >
+          <input style="display: block;"  type="submit" value="Starred Projects">
+        </form></li>
+
+
+        <li style="float: right"><a style="display: block;"><a><script>document.write(username)</script></a></li>
+        <li style="float: right"><form method="post" action="/index">
+          <input type="submit" value="Log out" onclick="logoutFunction()">
+        </form>  </li>
+      </ul>
     </div>
-    <h1>Followed Users</h1>
-    <div class="filterContainer">
-      <h3>Filters:</h3>
-      <button type="submit" onclick="sortAlphabetically()" class="filterButton">Alphabetically</button>
-      <button type="submit" onclick="sortLastAdded()" class="filterButton">Last Added</button>
-      <button type="submit" onclick="sortScore()" class="filterButton">Score</button>
-  </div>
-    <div class="followingsContainer">
-      <div class="profilePicture">
+    <div class="wrap">
+      <div class="search">
+
+        <input type="text" class="searchTerm" onchange="myFunction(this.value)" placeholder="Search user">
+        <input    class="searchButton" value="Search">
+        <div id="search-results"></div>
       </div>
-      <br>
-        <h1>USERNAME - SCORE</h1>
-        
+      <div class="filterContainer">
+        <h3>Filters:</h3>
+
+        <button type="submit" onclick="sortScore()" class="filterButton">Score</button>
+        <button type="submit" onclick="sortAlpha()" class="filterButton">Alphabetically</button>
+      </div>
+      <div class="projectContainer">
+        <div id="demo">  </div>
+      </div>
     </div>
- </div>
-</div>
 </body>
 </html>

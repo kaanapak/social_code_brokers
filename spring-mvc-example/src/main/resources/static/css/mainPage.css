@@ -40,13 +40,14 @@
   }
 
   .projectContainer{
-    margin-top: 30px;
+    float: left;
+    margin-top: 10px;
     float: left;
     width: 100%;
     height:100%;
-    padding: 30px;
+    padding: 2px;
     border: inset;
-    border-style: 1px;
+    border-style: 10px;
     border-color:#7dbcff99;
     background-color: white;
 }
@@ -54,11 +55,11 @@
   .profileContainer{
     margin-top: 30px;
     float: left;
-    width: 70%;
+    width: 5%;
     height: 5%;
-    padding: 30px;
+    padding: 2px;
     border: inset;
-    border-radius: 50px;
+    border-radius: 5px;
     border-style: 1px;
     border-color:#7dbcff99;
     background-color: white;
@@ -186,12 +187,16 @@
   border: #333333;
   background: #cccccc;
 }
-  input[type=button], input[type=submit], input[type=reset] {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
+
+
+
+    input[type=button], input[type=submit], input[type=reset] {
+      background-color: darkblue;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+
   }

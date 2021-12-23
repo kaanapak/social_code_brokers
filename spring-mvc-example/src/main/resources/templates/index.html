@@ -2,8 +2,9 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <script th:inline="javascript">
+
 	function gengrid() {
-		var x
+		var x=" "
 		if ("username" in localStorage) {
 			username = window.localStorage.getItem('username');
 			console.log(username)
@@ -13,18 +14,24 @@
 		}
 		document.getElementById("demo").innerHTML = x;
 		document.getElementById("myForm").submit();
+
+
 	}
+
+
 	window.onload = function () {
 		gengrid();
 	}
+
 </script>
 <head>
+	<link rel="stylesheet" th:href="@{/css/index.css}" />
 	<title>Social Code Brokers</title>
 	<link rel="stylesheet" href="./../static/css/index.css">
 </head>
 
-<body
-	style="background-image: url(https://c4.wallpaperflare.com/wallpaper/473/135/798/digital-art-minimalism-simple-background-dots-wallpaper-preview.jpg);">
+<body>
+
 <div class="container">
 
 
@@ -34,21 +41,21 @@
 		<input type='hidden' name='IsSıngIn' value='1' >
 		<input type="text" placeholder="USERNAME" name="username" required>
 		<input type="password" placeholder="PASSWORD" name="password" required>
-		<input type="submit">
+		<input type="submit" value="Sign in">
 			<hr style="border-top: dotted 1px;" />
 
 	</form>
 	<form action="/signUp" method="post">
-		<input type="submit" style="background-color: cadetblue;">
+		<input type="submit" style="background-color: cadetblue;" value="Sign up">
 	</form>
 </div>
+
 		<div class="tContainer">
-			<h4>Social Code Brokers we are this this this  this.</h4>
+			<h4>Social Code Brokers is new social media for coders.</h4>
 		</div>
-		<div class="personContainer">
-			<p>Last person to join details go here </p>
-		</div>
-	<div id="demo"> </div>
+
+	<div id="demo">    </div>
+
 
 </body>
 

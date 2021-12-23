@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sample.model.User;
-import com.sample.services.UserService;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,12 +41,18 @@ public class ProfileController {
         user.setRepoList(RepoList);
         user.setGitHubUsername(serverService.getGitUsername(username));
         model.addAttribute("user",user);
+        UserSystem system = new UserSystem();
+        system.setUserNameList(serverService.UserNameList());
+        model.addAttribute("system", system);
         return "profile";
     }
 
     @PostMapping("/searchedUser")
     public String searchedUser(Model model,String username,String searchedUsername,Integer IsAddStar,Integer IsRemoveStar,String StarredId,Integer IsFollow,Integer IsUnFollow) throws JSONException, IOException, InterruptedException {
+      searchedUsername=searchedUsername.replace(" ", "");
         if(!Objects.isNull(IsFollow)){
+            System.out.println("Add follower username "+username);
+            System.out.println("Add follower searched username "+searchedUsername);
             serverService.addfollowing(username,searchedUsername);
         }else if(!Objects.isNull(IsUnFollow)){
             serverService.unfollow(username,searchedUsername);
@@ -64,8 +70,11 @@ public class ProfileController {
         if(serverService.isFollowing(username,searchedUsername)){
             isFollowing=1;
         }
+        System.out.println("follow "+isFollowing);
         searchedUser.setIsFollowing(isFollowing);
         searchedUser.setUsername(searchedUsername);
+        searchedUser.setScore(apıService.ScoreCalculator(serverService.getGitUsername(searchedUsername)));
+        System.out.println("z"+searchedUsername);
 
         String gitUsername=serverService.getGitUsername(searchedUsername);
         ArrayList<Repository> RepoList= apıService.RepoList(gitUsername);
@@ -78,6 +87,9 @@ public class ProfileController {
         searchedUser.setGitHubUsername(serverService.getGitUsername(searchedUsername));
         searchedUser.setRepoList(RepoList);
         model.addAttribute("searchedUser",searchedUser);
+        UserSystem system = new UserSystem();
+        system.setUserNameList(serverService.UserNameList());
+        model.addAttribute("system", system);
 
         return "searchedUser";
     }

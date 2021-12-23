@@ -22,12 +22,38 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Small change at html">
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="HTML loop for showing repos&#10;Add star button functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/configuration/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/configuration/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/model/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/model/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/repository/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/repository/ProjectRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/java/com/example/demo/repository/TaskRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-data-jpa-example/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/RankingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/static/css/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/static/css/mainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/followings.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/followings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/mainPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/searchedUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/searchedUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/signUp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +89,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,15 +159,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,7 +209,8 @@
       <workItem from="1639313286077" duration="25742000" />
       <workItem from="1639641451298" duration="10027000" />
       <workItem from="1639927546754" duration="10262000" />
-      <workItem from="1639999218488" duration="23773000" />
+      <workItem from="1639999218488" duration="53156000" />
+      <workItem from="1640265098566" duration="19326000" />
     </task>
     <task id="LOCAL-00001" summary="Created services and started controllers">
       <created>1638995600826</created>
@@ -275,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640033626489</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="HTML loop for showing repos&#10;Add star button functionality">
+      <created>1640089222629</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1640089222629</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +339,8 @@
     <MESSAGE value="Important change&#10;Controller errors solved&#10;HTML connection done" />
     <MESSAGE value="Change at date-time&#10;Small change at html" />
     <MESSAGE value="Small change at html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small change at html" />
+    <MESSAGE value="HTML loop for showing repos&#10;Add star button functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="HTML loop for showing repos&#10;Add star button functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="182" key="#SQL_Dialects" timestamp="1639949673465">
@@ -319,38 +355,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="389" y="103" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1639928244671" />
-    <state width="940" height="164" key="GridCell.Tab.0.bottom" timestamp="1640087779104">
+    <state width="935" height="121" key="GridCell.Tab.0.bottom" timestamp="1640298674587">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
-    <state width="940" height="164" key="GridCell.Tab.0.center" timestamp="1640087779104">
+    <state width="935" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
+    <state width="935" height="121" key="GridCell.Tab.0.center" timestamp="1640298674587">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
-    <state width="940" height="164" key="GridCell.Tab.0.left" timestamp="1640087779104">
+    <state width="935" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
+    <state width="935" height="121" key="GridCell.Tab.0.left" timestamp="1640298674587">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
-    <state width="940" height="164" key="GridCell.Tab.0.right" timestamp="1640087779104">
+    <state width="935" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
+    <state width="935" height="121" key="GridCell.Tab.0.right" timestamp="1640298674587">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
-    <state width="940" height="164" key="GridCell.Tab.1.bottom" timestamp="1640087779105">
+    <state width="935" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
+    <state width="935" height="121" key="GridCell.Tab.1.bottom" timestamp="1640298674588">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640087779105" />
-    <state width="940" height="164" key="GridCell.Tab.1.center" timestamp="1640087779105">
+    <state width="935" height="121" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640298674588" />
+    <state width="935" height="121" key="GridCell.Tab.1.center" timestamp="1640298674587">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640087779105" />
-    <state width="940" height="164" key="GridCell.Tab.1.left" timestamp="1640087779104">
+    <state width="935" height="121" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
+    <state width="935" height="121" key="GridCell.Tab.1.left" timestamp="1640298674587">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640087779104" />
-    <state width="940" height="164" key="GridCell.Tab.1.right" timestamp="1640087779105">
+    <state width="935" height="121" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
+    <state width="935" height="121" key="GridCell.Tab.1.right" timestamp="1640298674588">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="940" height="164" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640087779105" />
+    <state width="935" height="121" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640298674588" />
     <state width="1010" height="204" key="GridCell.Tab.2.bottom" timestamp="1639998732328">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -371,6 +407,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1639948660986" />
+    <state x="121" y="51" key="MergeDialog" timestamp="1640248519446">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1640248519446" />
     <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1640011779141">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -379,17 +419,17 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1640078468775" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640033631828">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640089228959">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640033631828" />
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640078495776">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640089228959" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640248502200">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1640078495776" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1639948472666">
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1640248502200" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1640263783739">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1639948472666" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1640263783739" />
   </component>
 </project>

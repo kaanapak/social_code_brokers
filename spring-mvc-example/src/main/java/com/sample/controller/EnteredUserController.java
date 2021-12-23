@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sample.model.User;
-import com.sample.services.UserService;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Controller
@@ -26,7 +27,11 @@ public class EnteredUserController {
     @Autowired
     ServerService serverService = new ServerService();
     APIService apıService = new APIService();
+    @PostMapping("/index")
+    public String index(Model model) {
 
+        return "index";
+    }
 
     @PostMapping("/signUp")
     public String signUp(Model model) {
@@ -43,6 +48,8 @@ public class EnteredUserController {
 
         if (!Objects.isNull(IsSıngIn)) {
            //serverService.addfollowing("emaden99github","oguzhangithub");
+           //System.out.println("check: "+serverService.isFollowing("emaden99github","oguzhangithub"));
+
             if (!serverService.PasswordCheck(username, password)) {
                 directMainPage = false;
                 Error error = new Error("Wrong username/password");

@@ -2,9 +2,10 @@ package com.sample.controller;
 
 import com.sample.model.Repository;
 import com.sample.model.User;
+import com.sample.model.UserSystem;
 import com.sample.services.APIService;
 import com.sample.services.ServerService;
-import com.sample.services.UserService;
+
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,9 @@ public class RankingController {
         User user=new User();
         user.setUsername(username);
         ArrayList<String> StarredList= serverService.getStarredRepoList(username);
+        System.out.println(StarredList);
         ArrayList <Repository> StarredRepos=new ArrayList<>();
+        System.out.println("Size:"+StarredList.size());
         for(int i=0;i<StarredList.size();i++){
             Repository repo= apıService.getRepository(StarredList.get(i));
             repo.setStarred();
@@ -37,6 +40,9 @@ public class RankingController {
         }
         user.setStarredRepos(StarredRepos);
         model.addAttribute("user",user);
+        UserSystem system = new UserSystem();
+        system.setUserNameList(serverService.UserNameList());
+        model.addAttribute("system", system);
         return "starredProjects";
     }
 
@@ -60,6 +66,9 @@ public class RankingController {
         }
         user.setFollowingUsers(UserList);
         model.addAttribute("user",user);
+        UserSystem system = new UserSystem();
+        system.setUserNameList(serverService.UserNameList());
+        model.addAttribute("system", system);
         return "followings";
     }
 

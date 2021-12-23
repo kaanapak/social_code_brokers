@@ -48,13 +48,13 @@ this.score=score;
         this.username = username;
     }
     public void setRepoList(ArrayList<Repository> repoList) {
-        RepoList = repoList;
+        this.RepoList = repoList;
     }
     public void setFollowings(ArrayList<String> followings) {
-        Followings = followings;
+        this.Followings = followings;
     }
     public void setStarredRepos(ArrayList<Repository> starredRepos) {
-        StarredRepos = starredRepos;
+        this.StarredRepos = starredRepos;
     }
     public void setFollowingsRepos(ArrayList<Repository> followingsRepos) {
        this.FollowingsRepos = followingsRepos;

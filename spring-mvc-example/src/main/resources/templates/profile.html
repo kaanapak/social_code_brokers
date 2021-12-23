@@ -11,6 +11,7 @@
       };
       return res;
     };
+    userList=[[${system.toStringUsers()}]].split(',');
     username=[[${user.getUsername()}]]
     score=[[${user.getScore()}]]
     repoList=splitByPunctuations([[${user.toStringRepoList()}]])
@@ -18,65 +19,87 @@
     GitUsername=[[${user.getGitHubUsername()}]]
     function gengrid()
     {
-      var i,x
+
+      var i
+      var x=""
+
       for(i=0;i<repoList.length;i++)
       {
-        x=x+"<p>repo: "+repoList[i][3]+"  repo id: "+repoList[i][2]+"</p>"
-        x=x+"<p>language: "+repoList[i][1]+"  date: "+repoList[i][0]+"</p>"
+        x=x+"<div style='background: #9DBFAF' ><p>repo: "+repoList[i][3]+"  repo id: "+repoList[i][2]+"</p>"
+        x=x+"<p>language: "+repoList[i][1]+"  date: "+repoList[i][0]+"</p></div>"
 
-        x=x+"<p>------------------------------------------------------------------</p>"
+
       }
       document.getElementById("demo").innerHTML = x;
     }
     window.onload = function () {
       gengrid();
     }
-
+    function myFunction(val) {
+      var div;
+      let filtered = userList.filter(item => item.includes(val))
+      for(let i=0;i<filtered.length;i++)  {
+        console.log("filtered[i]",filtered[i]);
+        div = div +" <form method=\"post\" action=\"/searchedUser\">"
+        div = div +"<input type='hidden' name='username' value="+username+" >"
+        div = div +"<input type='hidden' name='searchedUsername' value='" + filtered[i] +"'>"
+        div = div +"<input style=\"display: block;\"  type=\"submit\" value=" + filtered[i] + ">"
+        div = div + "</form>"
+      }
+      document.getElementById("search-results").innerHTML = div;
+    }
+    function logoutFunction() {
+      localStorage.clear();
+    }
   </script>
+  <link rel="stylesheet" th:href="@{/css/mainPage.css}" />
   <title>My Profile</title>
   <link rel="stylesheet" href="./../static/css/mainPage.css">
 </head>
 
 <body>
-  <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
-    <div>
-      <div style="margin: 5px" class="navbar">
-        <ul style="list-style-type: none; top:0; margin: 0;padding: 0;overflow: hidden">
-          <li style="float: left;"><form method="post" action="/mainPage" >
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input style="display: block;" type="submit" value="Home">
-          </form></li>
-          <li style="float: left;"><form method="post" action="/followings" >
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input style="display: block;" type="submit" value="Following Users">
-          </form></li>
-          <li style="float: left;"><form method="post" action="/profile" >
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input style="display: block;" type="submit" value="Profile">
-          </form></li>
-          <li style="float: left;"><form method="post" action="/starredProjects">
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input style="display: block;" type="submit" value="Starred Projects">
-          </form></li>
-          <li style="float: left;"><button style="display: block;" id="invite">Invite User</button></li>
-          <li style="float: right"><a style="display: block;">Welcome <script>document.write(username)</script></a></li>
-        </ul>
-      </div>
-      <div class="wrap">
-        <div class="search">
+<div>
+  <div style="margin: 5px" class="navbar">
+    <ul style="list-style-type: none; top:0; margin: 0;padding: 0;overflow: hidden">
+      <li style="float: left;"><form method="post" class="headButton" action="/mainPage" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input style="display: block;"  type="submit" value="Home">
+      </form></li>
+      <li style="float: left;"><form method="post" class="headButton" action="/followings" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input style="display: block;"  type="submit" value="Following Users">
+      </form></li>
+      <li style="float: left;"><form method="post" class="headButton" action="/profile" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input style="display: block;"  type="submit" value="Profile">
+      </form></li>
+      <li style="float: left;"> <form method="post" class="headButton" action="/starredProjects">
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input style="display: block;"  type="submit" value="Starred Projects">
+      </form></li>
 
-           <input type="text" class="searchTerm" placeholder="Search user">
-           <button type="submit" class="searchButton">Submit</button>
-        </div>
-      <div class="profileContainer">
-        <div class="profilePicture">
 
-        <div class="projectContainer">
-          <div id="demo"></div>
-        </div>
-      </div>
+      <li style="float: right"><a style="display: block;"><script>document.write(username)</script></a></li>
+      <li style="float: right"><form method="post" action="/index">
+        <input type="submit" value="Log out" onclick="logoutFunction()">
+      </form>  </li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="search">
+
+      <input type="text" class="searchTerm" onchange="myFunction(this.value)" placeholder="Search user">
+      <input    class="searchButton" value="Search">
+      <div id="search-results"></div>
     </div>
+    <div class="projectContainer">
+      <p>Username: <script>document.write(username)</script> Github Username <script>document.write(GitUsername)</script></p>
+      <p>Score: <script>document.write(score)</script> </script></p>
     </div>
+    <div class="projectContainer">
+      <div id="demo">  </div>
+    </div>
+  </div>
   </body>
 
 </html>

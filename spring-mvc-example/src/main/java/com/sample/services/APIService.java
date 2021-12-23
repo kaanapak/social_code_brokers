@@ -34,7 +34,7 @@ public class APIService {
     //Is there a github account with that username
 
     public String getToken(){
-        String token="Bearer " + "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";
+        String token="Bearer " + "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";
         return token;
     }
 
@@ -198,8 +198,8 @@ public class APIService {
 
         String RepoName= (String) response_map.get("name");
         String time= (String) response_map.get("updated_at");
-        String date1=time.substring(0,9);
-        String hour=time.substring(11,15);
+        String date1=time.substring(0,10);
+        String hour=time.substring(11,16);
         String date=date1+" "+hour;
         String ıd=RepositoryId;
 
