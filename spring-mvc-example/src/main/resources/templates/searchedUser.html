@@ -13,19 +13,20 @@
     };
 
     username=[[${user.getUsername()}]]
+    console.log(username)
     usernameSearched=[[${ searchedUser.getUsername()}]]
     scoreSearched=[[${ searchedUser.getScore()}]]
     repoListSearched=splitByPunctuations([[${ searchedUser.toStringRepoList()}]])
+    console.log(repoListSearched)
     isFollowing=[[${ searchedUser.getIsFollowing()}]]
+    console.log(isFollowing)
     GitUsernameSearched=[[${searchedUser.getGitHubUsername()}]]
-    function gengrid()
-    {
-      var i,x
-      for(i=0;i<repoListSearched.length;i++)
-      {
-        x=x+"<p>repo: "+repoListSearched[i][3]+"  repo id: "+repoListSearched[i][2]+"</p>"
-        x=x+"<p>language: "+repoListSearched[i][1]+"  date: "+repoListSearched[i][0]+"</p>"
-        x=x+"<form method=post action=/mainPage >"
+    function gengrid() {
+      var i, x
+      for (i = 0; i < repoListSearched.length; i++) {
+        x = x + "<p>repo: " + repoListSearched[i][3] + "  repo id: " + repoListSearched[i][2] + "</p>"
+        x = x + "<p>language: " + repoListSearched[i][1] + "  date: " + repoListSearched[i][0] + "</p>"
+        x=x+"<form method=post action=/searchedUser >"
         x=x+"<input type='hidden' name='username' value="+username+" >"
         x=x+"<input type='hidden' name='searchedUsername' value="+usernameSearched+" >"
         if(repoListSearched[i][4].localeCompare("0")==0){
@@ -42,16 +43,17 @@
       }
       x=x+"<form method=post action=/searchedUser >"
       x=x+"<input type='hidden' name='username' value="+username+" >"
-      x=x+"<input type='hidden' name='searchedUsername' value="+usernameSearched+" >"
-     if(isFollowing.localeCompare("0")==0) {
+      x=x+"<input type='hidden' name='searchedUsername'value="+usernameSearched+" >"
+      if(isFollowing==0) {
         x=x+"<input type='hidden' name='IsFollow' value=1>"
-       x=x+"<input type=submit value='Follow'>"
-     }
-     else {
-       x=x+"<input type='hidden' name='IsUnFollow' value=1>"
-       x=x+"<input type=submit value='Unfollow'>"
-     }
+        x=x+"<input type=submit value='Follow'>"
+      }
+      else {
+        x=x+"<input type='hidden' name='IsUnFollow' value=1>"
+        x=x+"<input type=submit value='Unfollow'>"
+      }
       x = x+ "</form>"
+
       document.getElementById("demo").innerHTML = x;
     }
     window.onload = function () {
@@ -64,43 +66,43 @@
 </head>
 
 <body>
-  <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
-    <div>
-      <div class="navbar">
-        <ul>
-          <form method="post" action="/mainPage" >
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input type="submit" value="Home">
-          </form>
-          <form method="post" action="/followings" >
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input type="submit" value="Following Users">
-          </form>
-          <form method="post" action="/starredProjects">
-            <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input type="submit" value="Starred Projects">
-          </form>
-          <li><button id="invite">Invite User</button></li>
-          <li style="float: right"><a>Welcome <script>document.write(username)</script></a></li>
-        </ul>
-      </div>
-      <div class="wrap">
-        <div class="search">
-          <input type="text" class="searchTerm" placeholder="Search user">
-          <button type="submit" class="searchButton">Submit</button>
-        </div>
-        <div class="profileContainer">
-          <div class="profilePicture">
-          </div>
-          <br>
-          <h1> USERNAME - SCORE</h1>
-          <br>
-        </div>
-        <div class="projectContainer">
-          <div id="demo"></div>
-      </div>
+<body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
+<div>
+  <div class="navbar">
+    <ul>
+      <form method="post" action="/mainPage" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input type="submit" value="Home">
+      </form>
+      <form method="post" action="/followings" >
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input type="submit" value="Following Users">
+      </form>
+      <form method="post" action="/starredProjects">
+        <input type='hidden' name='username' th:value="${user.getUsername()}" >
+        <input type="submit" value="Starred Projects">
+      </form>
+      <li><button id="invite">Invite User</button></li>
+      <li style="float: right"><a>Welcome <script>document.write(username)</script></a></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="search">
+      <input type="text" class="searchTerm" placeholder="Search user">
+      <button type="submit" class="searchButton">Submit</button>
     </div>
+    <div class="profileContainer">
+      <div class="profilePicture">
+      </div>
+      <br>
+      <h1> USERNAME - SCORE</h1>
+      <br>
     </div>
-  </body>
+    <div class="projectContainer">
+      <div id="demo"></div>
+    </div>
+  </div>
+</div>
+</body>
 
 </html>

@@ -2,7 +2,21 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <script th:inline="javascript">
-
+	function gengrid() {
+		var x
+		if ("username" in localStorage) {
+			username = window.localStorage.getItem('username');
+			console.log(username)
+			x = x + "<form method=post action=/mainPage id='myForm' >"
+			x = x + "<input type='hidden' name='username' value=" + username + " >"
+			x = x + "</form>"
+		}
+		document.getElementById("demo").innerHTML = x;
+		document.getElementById("myForm").submit();
+	}
+	window.onload = function () {
+		gengrid();
+	}
 </script>
 <head>
 	<title>Social Code Brokers</title>
@@ -34,7 +48,7 @@
 		<div class="personContainer">
 			<p>Last person to join details go here </p>
 		</div>
-
+	<div id="demo"> </div>
 
 </body>
 

@@ -40,25 +40,26 @@
 <body>
   <body style="background-image: url(https://i.pinimg.com/736x/8d/cd/b5/8dcdb56e3001ea29f34a30a5a5cfb631.jpg)">
     <div>
-      <div class="navbar">
-        <ul>
-          <form method="post" action="/mainPage" >
+      <div style="margin: 5px" class="navbar">
+        <ul style="list-style-type: none; top:0; margin: 0;padding: 0;overflow: hidden">
+          <li style="float: left;"><form method="post" action="/mainPage" >
             <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input type="submit" value="Home">
-          </form>
-          <form method="post" action="/followings" >
+            <input style="display: block;" type="submit" value="Home">
+          </form></li>
+          <li style="float: left;"><form method="post" action="/followings" >
             <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input type="submit" value="Following Users">
-          </form>
-          <form method="post" action="/starredProjects">
+            <input style="display: block;" type="submit" value="Following Users">
+          </form></li>
+          <li style="float: left;"><form method="post" action="/profile" >
             <input type='hidden' name='username' th:value="${user.getUsername()}" >
-            <input type="submit" value="Starred Projects">
-          </form>
-          <li><button id="invite">Invite User</button></li>
-          <p> Welcome <script>document.write(username)</script></p>
-          <p> Your github username is <script>document.write(GitUsername)</script></a></p>
-          <p> Your score  is <script>document.write(score)</script></a></p>
-        </ul>
+            <input style="display: block;" type="submit" value="Profile">
+          </form></li>
+          <li style="float: left;"><form method="post" action="/starredProjects">
+            <input type='hidden' name='username' th:value="${user.getUsername()}" >
+            <input style="display: block;" type="submit" value="Starred Projects">
+          </form></li>
+          <li style="float: left;"><button style="display: block;" id="invite">Invite User</button></li>
+          <li style="float: right"><a style="display: block;">Welcome <script>document.write(username)</script></a></li>
         </ul>
       </div>
       <div class="wrap">

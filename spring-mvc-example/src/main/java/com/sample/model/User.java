@@ -57,7 +57,7 @@ this.score=score;
         StarredRepos = starredRepos;
     }
     public void setFollowingsRepos(ArrayList<Repository> followingsRepos) {
-        FollowingsRepos = followingsRepos;
+       this.FollowingsRepos = followingsRepos;
     }
     public void setScore(double score) {
         this.score = score;
@@ -66,7 +66,7 @@ this.score=score;
         return isFollowing;
     }
     public void setIsFollowing(Integer isFollowing) {
-        isFollowing = isFollowing;
+        this.isFollowing = isFollowing;
     }
     public void setFollowingUsers(ArrayList<User> followingUsers) {
         FollowingUsers = followingUsers;
