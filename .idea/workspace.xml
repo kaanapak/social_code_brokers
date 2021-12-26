@@ -22,7 +22,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="HTML loop for showing repos&#10;Add star button functionality" />
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="HTML loop for showing repos&#10;Add star button functionality">
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Input.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/controller/AbstractTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/controller/EnteredUserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/controller/ProfileControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/controller/RankingControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/services/APIServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/SpringMvcExampleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/SpringMvcExampleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +65,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -98,7 +112,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spring-boot-starter-webflux-2.6.2.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -106,28 +123,115 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.sample.controller" />
+      <recent name="com.sample.services" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.sample.controller" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.sample.controller" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kapak\IdeaProjects\Social Media For Coders\spring-mvc-example\src\main\resources\templates" />
       <recent name="C:\Users\kapak\IdeaProjects\Social Media For Coders\spring-mvc-example\src\main\resources\static" />
       <recent name="C:\Users\kapak\IdeaProjects\Social Media For Coders\spring-mvc-example\src\main\resources\static\css" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringMvcExampleApplication">
-    <configuration name="APIService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sample.services.APIService" />
-      <module name="spring-mvc-example" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sample.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="JUnit.EnteredUserControllerTest.mainPage">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="signUp.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/social_code_brokers/spring-mvc-example/templates/signUp.html" useBuiltInWebServerPort="true">
-      <method v="2" />
+    <configuration name="EnteredUserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mvc-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sample.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.sample.controller.EnteredUserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnteredUserControllerTest.mainPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mvc-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sample.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.sample.controller.EnteredUserControllerTest" />
+      <option name="METHOD_NAME" value="mainPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileControllerTest.profile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mvc-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sample.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.sample.controller.ProfileControllerTest" />
+      <option name="METHOD_NAME" value="profile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileControllerTest.searchedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mvc-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sample.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.sample.controller.ProfileControllerTest" />
+      <option name="METHOD_NAME" value="searchedUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RankingControllerTest.starredProjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mvc-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sample.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.sample.controller.RankingControllerTest" />
+      <option name="METHOD_NAME" value="starredProjects" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-data-jpa-example.main" />
@@ -145,8 +249,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.APIService" />
-        <item itemvalue="JavaScript Debug.signUp.html" />
+        <item itemvalue="JUnit.EnteredUserControllerTest.mainPage" />
+        <item itemvalue="JUnit.ProfileControllerTest.searchedUser" />
+        <item itemvalue="JUnit.RankingControllerTest.starredProjects" />
+        <item itemvalue="JUnit.ProfileControllerTest.profile" />
+        <item itemvalue="JUnit.EnteredUserControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -311,43 +418,59 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="146" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1639947294422" />
-    <state x="467" y="125" key="FileChooserDialogImpl" timestamp="1640517077753">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="93" y="93" width="1095" height="495" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1640542245940">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="389" y="103" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1639928244671" />
+    <state x="93" y="93" width="1095" height="495" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1280.680@0.0.1280.680" timestamp="1640542245940" />
+    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1640523131539">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1640523131539" />
+    <state x="354" y="213" width="461" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1640524604358">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="354" y="213" width="461" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1640524604358" />
+    <state x="120" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1640524525275">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="120" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1640524525275" />
+    <state x="389" y="103" key="FileChooserDialogImpl" timestamp="1640524906237">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="389" y="103" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1640524906237" />
     <state x="467" y="125" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1640517077753" />
-    <state width="935" height="121" key="GridCell.Tab.0.bottom" timestamp="1640298674587">
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom" timestamp="1640542211172">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
-    <state width="935" height="121" key="GridCell.Tab.0.center" timestamp="1640298674587">
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640542211172" />
+    <state width="1237" height="247" key="GridCell.Tab.0.center" timestamp="1640542211171">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
-    <state width="935" height="121" key="GridCell.Tab.0.left" timestamp="1640298674587">
+    <state width="1237" height="247" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640542211171" />
+    <state width="1237" height="247" key="GridCell.Tab.0.left" timestamp="1640542211171">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
-    <state width="935" height="121" key="GridCell.Tab.0.right" timestamp="1640298674587">
+    <state width="1237" height="247" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640542211171" />
+    <state width="1237" height="247" key="GridCell.Tab.0.right" timestamp="1640542211171">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
-    <state width="935" height="121" key="GridCell.Tab.1.bottom" timestamp="1640298674588">
+    <state width="1237" height="247" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640542211171" />
+    <state width="1185" height="110" key="GridCell.Tab.1.bottom" timestamp="1640521864092">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640298674588" />
-    <state width="935" height="121" key="GridCell.Tab.1.center" timestamp="1640298674587">
+    <state width="1185" height="110" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640521864092" />
+    <state width="1185" height="110" key="GridCell.Tab.1.center" timestamp="1640521864092">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
-    <state width="935" height="121" key="GridCell.Tab.1.left" timestamp="1640298674587">
+    <state width="1185" height="110" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640521864092" />
+    <state width="1185" height="110" key="GridCell.Tab.1.left" timestamp="1640521864092">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640298674587" />
-    <state width="935" height="121" key="GridCell.Tab.1.right" timestamp="1640298674588">
+    <state width="1185" height="110" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640521864092" />
+    <state width="1185" height="110" key="GridCell.Tab.1.right" timestamp="1640521864092">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="935" height="121" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640298674588" />
+    <state width="1185" height="110" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640521864092" />
     <state width="1010" height="204" key="GridCell.Tab.2.bottom" timestamp="1639998732328">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -364,10 +487,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1010" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1639998732328" />
-    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1639948660986">
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1640532550007">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1639948660986" />
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1640532550007" />
     <state x="121" y="51" key="MergeDialog" timestamp="1640248519446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -376,10 +499,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1640011779141" />
-    <state x="121" y="0" key="SettingsEditor" timestamp="1640078468775">
+    <state x="242" y="0" key="SettingsEditor" timestamp="1640524927568">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1640078468775" />
+    <state x="242" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1640524927568" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640089228959">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -388,6 +511,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1640248502200" />
+    <state x="349" y="5" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1640541433321">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="349" y="5" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.680@0.0.1280.680" timestamp="1640541433321" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1640263783739">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

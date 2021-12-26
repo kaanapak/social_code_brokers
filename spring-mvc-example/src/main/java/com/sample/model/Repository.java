@@ -70,4 +70,12 @@ public void setStarred(){
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setId(String ıd) {
+        this.ıd = ıd;
+    }
 }

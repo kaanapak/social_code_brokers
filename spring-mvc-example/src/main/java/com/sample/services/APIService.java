@@ -34,13 +34,13 @@ public class APIService {
     //Is there a github account with that username
 
     public String getToken(){
-        String token="Bearer " + "";
+        String token="Bearer " + "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";
         return token;
     }
 
     public Boolean isGithub(String GitUsername) throws IOException, InterruptedException {
         String url = "https://api.github.com/users/" + GitUsername+"/?access_token=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";
-       // HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+       //HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create( "https://api.github.com/users/" + GitUsername))
                 .GET()
