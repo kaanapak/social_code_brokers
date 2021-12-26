@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import com.sample.model.Error;
 
 @Controller
 public class EnteredUserController {
@@ -35,6 +36,9 @@ public class EnteredUserController {
 
     @PostMapping("/signUp")
     public String signUp(Model model) {
+
+        Error error = new Error("K");
+        model.addAttribute("error",error);
 
         return "signUp";
     }
@@ -53,7 +57,7 @@ public class EnteredUserController {
             if (!serverService.PasswordCheck(username, password)) {
                 directMainPage = false;
                 Error error = new Error("Wrong username/password");
-                model.addAttribute(error);
+                model.addAttribute("error",error);
                 return "index";
             }else{
                 UserSystem system = new UserSystem();
@@ -75,6 +79,9 @@ public class EnteredUserController {
                 }
                 user.setFollowingsRepos(FollowingRepos);
                 model.addAttribute("user", user);
+                Error error = new Error("K");
+                model.addAttribute("error",error);
+
                 return "mainPage";
             }
         } else if (!Objects.isNull(IsSıgnup)) {
@@ -82,13 +89,13 @@ public class EnteredUserController {
                 System.out.println("There is a user with same username");
                 directMainPage = false;
                 Error error = new Error("There is a user with same username");
-                model.addAttribute(error);
+                model.addAttribute("error",error);
                 return "signUp";
             } else if (!apıService.isGithub(GitUsername)) {
                 System.out.println("It isn't a valid github username");
                 directMainPage = false;
                 Error error = new Error("It isn't a valid github username");
-                model.addAttribute(error);
+                model.addAttribute("error",error);
                 return "signUp";
             } else {
                 serverService.AddUser(username, GitUsername, password);
@@ -111,6 +118,9 @@ public class EnteredUserController {
                 }
                 user.setFollowingsRepos(FollowingRepos);
                 model.addAttribute("user", user);
+                Error error = new Error("K");
+                model.addAttribute("error",error);
+
                 return "mainPage";
             }
 
@@ -140,6 +150,9 @@ public class EnteredUserController {
             }
             user.setFollowingsRepos(FollowingRepos);
             model.addAttribute("user", user);
+            Error error = new Error("K");
+            model.addAttribute("error",error);
+
             return "mainPage";
         }
 

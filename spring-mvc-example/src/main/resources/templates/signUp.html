@@ -2,9 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+  <script th:inline="javascript">
+    error2=[[${error.getError()}]]
+    console.log(error2)
+    console.log(error2.localeCompare("K")==0)
+    if(error2==="It isn't a valid github username") {
+      alert(error2);
+    }
+  </script>
+
+
   <title>Sign Up</title>
   <link rel="stylesheet" href="../css/index.css">
 </head>
+
 
 <body style="background-image:url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX35412283.jpg)">
 
