@@ -34,7 +34,7 @@ public class APIService {
     //Is there a github account with that username
 
     public String getToken(){
-        String token="Bearer " + "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";
+        String token="Bearer " + "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";
         return token;
     }
 

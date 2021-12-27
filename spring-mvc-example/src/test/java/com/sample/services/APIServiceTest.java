@@ -2,7 +2,9 @@ package com.sample.services;
 
 import com.sample.model.Repository;
 import org.json.JSONException;
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
+import org.junit.Test;
+
 
 
 import javax.swing.text.html.HTML;
@@ -98,17 +100,5 @@ public class APIServiceTest {
         assertTrue(istrue);
     }
 
-    @Test
-    public void getLanguage() throws IOException, InterruptedException {
 
-
-        ArrayList<String> languages = APIService.getLanguage("https://api.github.com/repos/kaanapak/social_code_brokers/languages");
-
-        boolean istrue = true;
-        if (!languages.get(1).equals("[Java, CSS, HTML]")){
-            istrue = false;
-        }
-        assertTrue(istrue);
-
-    }
 }
