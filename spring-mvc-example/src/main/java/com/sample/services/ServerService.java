@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -22,11 +23,11 @@ import java.util.Map;
 @Service
 public class ServerService {
     @Autowired
-    private  JdbcTemplate jdbctemplate;
+    private   JdbcTemplate jdbctemplate;
 
 
 
-    public void AddUser(String username, String GitUsername, String password){
+    public void AddUser(String username, String GitUsername, String password ){
 
         jdbctemplate.update(
                 "insert into user_1 (username, github_username,password)"  +

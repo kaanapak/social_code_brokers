@@ -78,4 +78,8 @@ public void setStarred(){
     public void setId(String ıd) {
         this.ıd = ıd;
     }
+
+    public String getOwner() {
+        return owner;
+    }
 }

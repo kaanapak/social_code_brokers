@@ -7,6 +7,7 @@ import com.sample.services.ServerService;
 
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,9 +26,11 @@ import com.sample.model.Error;
 @Controller
 public class EnteredUserController {
 
+
     @Autowired
     ServerService serverService = new ServerService();
     APIService apıService = new APIService();
+
     @PostMapping("/index")
     public String index(Model model) {
 
