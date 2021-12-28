@@ -100,7 +100,7 @@ assertEquals(user.getFollowings(),followingslist);
         followingslist.add(user2);
         user.setFollowingUsers(followingslist);
 
-        assertEquals(user.toStringFollowingUsers(),"egegoztepe|10|1");
+        assertEquals(user.toStringFollowingUsers(),"kaanapak|null|1.0");
     }
 
     @Test
@@ -109,7 +109,7 @@ assertEquals(user.getFollowings(),followingslist);
         user2.setScore(1);
         user2.setUsername("kaanapak");
         user2.setIsFollowing(1);
-        assertEquals(user2.toStringUserFollowing(),"kaanapak|1.0|1");
+        assertEquals(user2.toStringUserFollowing(),"kaanapak|null|1.0");
     }
 
 
@@ -120,7 +120,7 @@ assertEquals(user.getFollowings(),followingslist);
         ArrayList<Repository> starreds=new ArrayList<>();
         starreds.add(new Repository("12/02/2021",Languages,"egoztepe","ege4e"));
         user2.setStarredRepos(starreds);
-        assertEquals(user2.toStringStarredRepos(),"deneme");
+        assertEquals(user2.toStringStarredRepos(),"12/02/2021||egoztepe|ege4e|0|null");
     }
 
 
@@ -131,7 +131,7 @@ assertEquals(user.getFollowings(),followingslist);
         ArrayList<String> Languages=new ArrayList();
         repolar.add(new Repository("12/02/2021",Languages,"egoztepe","ege4e"));
         user.setRepoList(repolar);
-        assertEquals(user.toStringRepoList(),"deneme");
+        assertEquals(user.toStringRepoList(),"12/02/2021||egoztepe|ege4e|0|null");
 
 
     }
@@ -145,7 +145,7 @@ assertEquals(user.getFollowings(),followingslist);
         ArrayList<String> Languages=new ArrayList();
         repofollow.add(new Repository("12/02/2021",Languages,"egoztepe","ege4e"));
         user.setFollowingsRepos(repofollow);
-        assertEquals(user.toStringFollowingRepos(),"deneme");
+        assertEquals(user.toStringFollowingRepos(),"12/02/2021||egoztepe|ege4e|0|null");
 
     }
 }

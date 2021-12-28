@@ -47,6 +47,11 @@ this.score=score;
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public ArrayList<User> getFollowingUsers() {
+        return FollowingUsers;
+    }
+
     public void setRepoList(ArrayList<Repository> repoList) {
         this.RepoList = repoList;
     }

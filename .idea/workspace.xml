@@ -22,17 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Controller Junit Tests">
-      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/model/RepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/model/UserSystemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/model/UserTest.java" afterDir="false" />
+    <list default="true" id="6ff9a8dd-b2e8-46e6-bf4d-34862c19f187" name="Default Changelist" comment="Model Junit Tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/controller/EnteredUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/APIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/java/com/sample/services/ServerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/starredProjects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/services/ServerServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/model/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mvc-example/src/test/java/com/sample/model/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +141,7 @@
       <recent name="com.sample.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.sample in spring-mvc-example">
+  <component name="RunManager" selected="Spring Boot.SpringMvcExampleApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -171,22 +166,6 @@
       <option name="PACKAGE_NAME" value="com.sample.model" />
       <option name="MAIN_CLASS_NAME" value="com.sample.model.UserSystemTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserSystemTest.setUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-mvc-example" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sample.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sample.model" />
-      <option name="MAIN_CLASS_NAME" value="com.sample.model.UserSystemTest" />
-      <option name="METHOD_NAME" value="setUserList" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -223,6 +202,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mvc-example" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sample.model" />
+      <option name="MAIN_CLASS_NAME" value="com.sample.model.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="sample in spring-mvc-example" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-mvc-example" />
       <option name="TEST_OBJECT" value="directory" />
@@ -248,10 +242,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.sample in spring-mvc-example" />
+        <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.UserSystemTest" />
         <item itemvalue="JUnit.UserSystemTest.setUserNameList" />
         <item itemvalue="JUnit.UserSystemTest.toStringUsers" />
-        <item itemvalue="JUnit.UserSystemTest.setUserList" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +270,7 @@
       <workItem from="1639999218488" duration="53156000" />
       <workItem from="1640265098566" duration="19326000" />
       <workItem from="1640517061866" duration="16000" />
-      <workItem from="1640544434832" duration="19828000" />
+      <workItem from="1640544434832" duration="23594000" />
     </task>
     <task id="LOCAL-00001" summary="Created services and started controllers">
       <created>1638995600826</created>
@@ -390,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640636494550</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Model Junit Tests">
+      <created>1640723825547</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1640723825547</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +423,8 @@
     <MESSAGE value="HTML loop for showing repos&#10;Add star button functionality" />
     <MESSAGE value="HTML Pages finished, stylings headers done and data issues solved &#10;Searched user errors solved&#10;Sorting done&#10;Some controllers errors solved" />
     <MESSAGE value="Controller Junit Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller Junit Tests" />
+    <MESSAGE value="Model Junit Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model Junit Tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="337" y="0" key="#Editor_|_Color_Scheme_|_General" timestamp="1640548565488">
@@ -462,38 +464,38 @@
     </state>
     <state x="637" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1640543084033" />
     <state x="467" y="125" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1640517077753" />
-    <state width="1237" height="158" key="GridCell.Tab.0.bottom" timestamp="1640720188283">
+    <state width="1237" height="200" key="GridCell.Tab.0.bottom" timestamp="1640726804099">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="158" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640720188283" />
-    <state width="1237" height="158" key="GridCell.Tab.0.center" timestamp="1640720188283">
+    <state width="1237" height="200" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640726804099" />
+    <state width="1237" height="200" key="GridCell.Tab.0.center" timestamp="1640726804099">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="158" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640720188283" />
-    <state width="1237" height="158" key="GridCell.Tab.0.left" timestamp="1640720188282">
+    <state width="1237" height="200" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640726804099" />
+    <state width="1237" height="200" key="GridCell.Tab.0.left" timestamp="1640726804099">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="158" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640720188282" />
-    <state width="1237" height="158" key="GridCell.Tab.0.right" timestamp="1640720188283">
+    <state width="1237" height="200" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640726804099" />
+    <state width="1237" height="200" key="GridCell.Tab.0.right" timestamp="1640726804099">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="158" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640720188283" />
-    <state width="597" height="310" key="GridCell.Tab.1.bottom" timestamp="1640703683183">
+    <state width="1237" height="200" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640726804099" />
+    <state width="1237" height="200" key="GridCell.Tab.1.bottom" timestamp="1640726804100">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="597" height="310" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640703683183" />
-    <state width="597" height="310" key="GridCell.Tab.1.center" timestamp="1640703683183">
+    <state width="1237" height="200" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640726804100" />
+    <state width="1237" height="200" key="GridCell.Tab.1.center" timestamp="1640726804100">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="597" height="310" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640703683183" />
-    <state width="597" height="310" key="GridCell.Tab.1.left" timestamp="1640703683183">
+    <state width="1237" height="200" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640726804100" />
+    <state width="1237" height="200" key="GridCell.Tab.1.left" timestamp="1640726804100">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="597" height="310" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640703683183" />
-    <state width="597" height="310" key="GridCell.Tab.1.right" timestamp="1640703683183">
+    <state width="1237" height="200" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640726804100" />
+    <state width="1237" height="200" key="GridCell.Tab.1.right" timestamp="1640726804100">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="597" height="310" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640703683183" />
+    <state width="1237" height="200" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640726804100" />
     <state width="1010" height="204" key="GridCell.Tab.2.bottom" timestamp="1639998732328">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -526,18 +528,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="242" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1640545735371" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640723800158">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1640723828057">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640723800158" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1640723828057" />
     <state x="771" y="143" key="chooseDestDirectoryDialog" timestamp="1640723791322">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="771" y="143" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1640723791322" />
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640542477817">
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640723915514">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1640542477817" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1640723915514" />
     <state x="349" y="5" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1640723791361">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -549,7 +551,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/social_code_brokers$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1640544939525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/social_code_brokers$sample_in_spring_mvc_example.ic" NAME="sample in spring-mvc-example Coverage Results" MODIFIED="1640720188232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/social_code_brokers$UserTest.ic" NAME="UserTest Coverage Results" MODIFIED="1640724051449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.sample.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/social_code_brokers$sample_in_spring_mvc_example.ic" NAME="sample in spring-mvc-example Coverage Results" MODIFIED="1640724151426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/social_code_brokers$ProfileControllerTest.ic" NAME="ProfileControllerTest Coverage Results" MODIFIED="1640545955143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.sample.controller.*</FILTER>
     </SUITE>
